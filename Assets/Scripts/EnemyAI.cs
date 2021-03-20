@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -11,6 +12,7 @@ public class EnemyAI : MonoBehaviour
 
     NavMeshAgent navMeshAgent;
     float rangeToEnemy = Mathf.Infinity;    //to not causing problems in the future "PROGRAMMING"
+    bool isProvoked = false;
 
     void Start()
     {
@@ -20,14 +22,34 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         rangeToEnemy = Vector3.Distance(target.position, transform.position);
-        if(rangeToEnemy <= chaseRange)
+
+
+        if (isProvoked)
         {
-            navMeshAgent.SetDestination(target.position);
+            EngageTarget();
+        }
+        else if(rangeToEnemy <= chaseRange)
+        {
+            isProvoked = true;
+            
         }
     
 
     }
 
+    void EngageTarget()
+    {
+        if (rangeToEnemy >= navMeshAgent.stoppingDistance)
+        {
+            navMeshAgent.SetDestination(target.position);
+        }
+        else if (rangeToEnemy >= navMeshAgent.stoppingDistance)
+        {
+            print("hi");
+        }
+
+    
+    }
 
     void OnDrawGizmosSelected()
     {
