@@ -58,6 +58,7 @@
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\Asset Packs\Survival Carbine\Thanks To Michael.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
