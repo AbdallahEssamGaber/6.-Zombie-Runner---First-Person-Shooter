@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4543474937029335894}
   - component: {fileID: 4543474937029335895}
   - component: {fileID: 4543474937029335892}
+  - component: {fileID: 1138380845}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -113,7 +114,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -135,6 +136,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   chaseRange: 10
+--- !u!114 &1138380845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4543474937029335893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f61c8e2c5725574287535b3acfcf18b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: 3
 --- !u!1 &5860191292765401433
 GameObject:
   m_ObjectHideFlags: 0

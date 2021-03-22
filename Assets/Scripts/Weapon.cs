@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] Camera cameraObject;
     [SerializeField] float range = 0f;
+    [SerializeField] int damage = 1;
 
     void Update()
     {
@@ -19,18 +20,18 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        Physics.Raycast(cameraObject.transform.position, cameraObject.transform.forward, out RaycastHit hit, range);
-        //if (hit.transform != null)
-        //{
-
-        //    print(hit.transform.name);
-
-        //}
-        if (hit.transform.name == "Enemy")
+        if(Physics.Raycast(cameraObject.transform.position, cameraObject.transform.forward, out RaycastHit hit, range))
         {
+            Debug.Log(hit.transform.name);
+            EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
+            if (target == null) return;     //cuz the error if u hit smth dont have EnemyHealth
+            target.Damage(damage);
 
-            print(hit.transform.name);
 
+        }
+        else    //just to making sure "PROGRAMMING"
+        {
+            return;
         }
     }
 }
