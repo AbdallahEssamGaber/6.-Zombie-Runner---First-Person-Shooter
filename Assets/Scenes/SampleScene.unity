@@ -250,6 +250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04a24b5e91096bd4e8ae6fba35c4dbf8, type: 3}
+--- !u!198 &133190615 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5651456886866695254, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+  m_PrefabInstance: {fileID: 1837526985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &185970923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2968,6 +2973,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1598636373, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: muzzleFlash
+      value: 
+      objectReference: {fileID: 133190615}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
 --- !u!1001 &1884986307
