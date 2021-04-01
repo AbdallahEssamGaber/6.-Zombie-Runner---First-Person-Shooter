@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] float range = 0f;
     [SerializeField] int damage = 1;
     [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] GameObject hitImpactVFX;
 
     void Update()
     {
@@ -29,8 +30,7 @@ public class Weapon : MonoBehaviour
     {
         if (Physics.Raycast(cameraObject.transform.position, cameraObject.transform.forward, out RaycastHit hit, range))
         {
-
-            Debug.Log(hit.transform.name);
+            HitImpact(hit);
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target == null) return;     //cuz the error if u hit smth dont have EnemyHealth
             target.Damage(damage);
@@ -41,5 +41,11 @@ public class Weapon : MonoBehaviour
         {
             return;
         }
+    }
+
+    void HitImpact(RaycastHit hit)
+    {
+        GameObject hitImpactObj = Instantiate(hitImpactVFX, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(hitImpactObj, 0.1f); 
     }
 }
