@@ -33,7 +33,8 @@ public class EnemyAI : MonoBehaviour
             isProvoked = true;
             
         }
-    
+
+
 
     }
 
@@ -41,16 +42,29 @@ public class EnemyAI : MonoBehaviour
     {
         if (rangeToEnemy >= navMeshAgent.stoppingDistance)
         {
-            navMeshAgent.SetDestination(target.position);
+            ChaseTarget();
         }
-        else if (rangeToEnemy >= navMeshAgent.stoppingDistance)
+        else if (rangeToEnemy <= navMeshAgent.stoppingDistance)
         {
-            print("hi");
+            AttackTarget();
         }
 
-    
+
+    }
+    void ChaseTarget()
+    {
+        GetComponent<Animator>().SetTrigger("move");
+        GetComponent<Animator>().SetBool("attack", false);
+        navMeshAgent.SetDestination(target.position);
     }
 
+    void AttackTarget()
+    {
+        GetComponent<Animator>().SetBool("attack", true);
+
+    }
+
+    
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
