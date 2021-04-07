@@ -23,15 +23,21 @@ public class EnemyAI : MonoBehaviour
     {
         rangeToEnemy = Vector3.Distance(target.position, transform.position);
 
-
+        
         if (isProvoked)
         {
             EngageTarget();
+            isProvoked = false;
         }
         else if(rangeToEnemy <= chaseRange)
         {
             isProvoked = true;
-            
+
+        }
+        else
+        {
+            GetComponent<Animator>().ResetTrigger("move");
+            GetComponent<Animator>().SetTrigger("Idle");
         }
 
 
@@ -40,6 +46,8 @@ public class EnemyAI : MonoBehaviour
 
     void EngageTarget()
     {
+        GetComponent<Animator>().ResetTrigger("Idle");
+
         if (rangeToEnemy >= navMeshAgent.stoppingDistance)
         {
             ChaseTarget();
