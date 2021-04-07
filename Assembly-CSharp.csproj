@@ -58,6 +58,7 @@
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\EnemyAttack.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Asset Packs\Survival Carbine\Thanks To Michael.txt" />
