@@ -9,6 +9,7 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] Transform target;
     [SerializeField] float chaseRange = 5f;
+    [SerializeField] float turnSpeed = 5f;
 
     NavMeshAgent navMeshAgent;
     float rangeToEnemy = Mathf.Infinity;    //to not causing problems in the future "PROGRAMMING"
@@ -60,10 +61,18 @@ public class EnemyAI : MonoBehaviour
 
     void AttackTarget()
     {
+        FaceTarget();
         GetComponent<Animator>().SetBool("attack", true);
 
     }
 
+
+    void FaceTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation , Time.deltaTime * turnSpeed);
+    }
     
     void OnDrawGizmosSelected()
     {
