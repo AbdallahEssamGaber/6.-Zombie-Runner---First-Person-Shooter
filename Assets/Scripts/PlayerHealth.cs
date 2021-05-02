@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
         hitPoints -= deamage;
         if (hitPoints <= 0)
         {
-            Debug.Log("dead bitch!");
+            GetComponent<DeathHandler>().HandleDeath();
         }
     }
 

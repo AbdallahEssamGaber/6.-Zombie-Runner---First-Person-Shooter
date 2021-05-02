@@ -477,7 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAttack: {fileID: 81111143}
-  hitPoints: 15
+  hitPoints: 3
 --- !u!1001 &241631438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3261,7 +3261,6 @@ RectTransform:
   - {fileID: 2078498947}
   - {fileID: 1650221981}
   - {fileID: 1584690978}
-  - {fileID: 1760424309}
   m_Father: {fileID: 1728950983}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3426,6 +3425,7 @@ Transform:
   - {fileID: 1105771118}
   - {fileID: 842183931}
   - {fileID: 1651423301}
+  - {fileID: 1760424309}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3459,10 +3459,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760424308}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.5, y: -161, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1651423301}
+  m_Father: {fileID: 1728950983}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1760424310
@@ -3755,6 +3755,10 @@ PrefabInstance:
       propertyPath: hitImpactVFX
       value: 
       objectReference: {fileID: 8592554129470173569, guid: c972451442477794b8ff109f4767994d, type: 3}
+    - target: {fileID: 1445269023667801558, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: gameOverCanves
+      value: 
+      objectReference: {fileID: 1651423304}
     - target: {fileID: 5651456886866695254, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.25
@@ -4237,7 +4241,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1138380845, guid: c022f127baa765847bfc1b218398ae93, type: 3}
       propertyPath: enemyHealth
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 110877031395583095, guid: c022f127baa765847bfc1b218398ae93, type: 3}
       propertyPath: target
@@ -4249,7 +4253,7 @@ PrefabInstance:
       objectReference: {fileID: 213276632}
     - target: {fileID: 110877031395583095, guid: c022f127baa765847bfc1b218398ae93, type: 3}
       propertyPath: deamage
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4543474937029335891, guid: c022f127baa765847bfc1b218398ae93, type: 3}
       propertyPath: m_LocalPosition.x
