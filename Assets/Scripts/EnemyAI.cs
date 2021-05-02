@@ -14,7 +14,7 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent navMeshAgent;
     float rangeToEnemy = Mathf.Infinity;    //to not causing problems in the future "PROGRAMMING"
     bool isProvoked = false;
-
+    bool entered;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -32,8 +32,13 @@ public class EnemyAI : MonoBehaviour
         }
         else if(rangeToEnemy <= chaseRange)
         {
+            entered = false;
             isProvoked = true;
 
+        }
+        else if (entered)
+        {
+            GetComponent<Animator>().ResetTrigger("move");
         }
         else
         {
@@ -43,6 +48,11 @@ public class EnemyAI : MonoBehaviour
 
 
 
+    }
+    public void OnDamageTaken()
+    {
+        entered = true;
+        isProvoked = true; 
     }
 
     void EngageTarget()
@@ -60,6 +70,10 @@ public class EnemyAI : MonoBehaviour
 
 
     }
+
+   
+
+
     void ChaseTarget()
     {
         GetComponent<Animator>().SetTrigger("move");
