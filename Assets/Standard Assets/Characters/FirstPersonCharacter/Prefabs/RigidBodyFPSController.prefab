@@ -318,6 +318,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zommed_in: 18
   zommed_out: 60
+  zommed_in_sen: 0.6
+  zommed_out_sen: 2
 --- !u!114 &1445269023667801558
 MonoBehaviour:
   m_ObjectHideFlags: 0
