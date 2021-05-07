@@ -180,7 +180,9 @@ GameObject:
   - component: {fileID: 5400000}
   - component: {fileID: 13600000}
   - component: {fileID: 11400004}
+  - component: {fileID: 7022746707740948012}
   - component: {fileID: 1445269023667801558}
+  - component: {fileID: 213276632}
   m_Layer: 0
   m_Name: RigidBodyFPSController
   m_TagString: Untagged
@@ -302,6 +304,20 @@ MonoBehaviour:
     slowDownRate: 20
     airControl: 0
     shellOffset: 0
+--- !u!114 &7022746707740948012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0373541460aa127459bd1c1b5ba92ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zommed_in: 18
+  zommed_out: 60
 --- !u!114 &1445269023667801558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +330,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d39b91c75447904f869a18bd7e8c17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverCanves: {fileID: 0}
+--- !u!114 &213276632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4c6ad33bb9c624aab81b7130485d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAttack: {fileID: 0}
+  hitPoints: 3
 --- !u!1 &37512127
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,8 +391,8 @@ MonoBehaviour:
   cameraObject: {fileID: 2000000}
   range: 100
   damage: 1
-  muzzleFlash: {fileID: 0}
-  hitImpactVFX: {fileID: 0}
+  muzzleFlash: {fileID: 5651456886866695254}
+  hitImpactVFX: {fileID: 8592554129470173569, guid: c972451442477794b8ff109f4767994d, type: 3}
 --- !u!1001 &533603456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -429,6 +460,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carbine
       objectReference: {fileID: 0}
+    - target: {fileID: 5651456886962254038, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
 --- !u!1 &2337074158834024198 stripped
@@ -439,5 +474,10 @@ GameObject:
 --- !u!4 &2337074158834049830 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2337074158996965286, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+  m_PrefabInstance: {fileID: 533603456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5651456886866695254 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5651456886962254038, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
   m_PrefabInstance: {fileID: 533603456}
   m_PrefabAsset: {fileID: 0}
