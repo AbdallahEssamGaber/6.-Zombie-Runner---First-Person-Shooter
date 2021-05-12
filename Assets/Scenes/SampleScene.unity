@@ -189,6 +189,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04a24b5e91096bd4e8ae6fba35c4dbf8, type: 3}
+--- !u!114 &72533500 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11400004, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+  m_PrefabInstance: {fileID: 1837526985}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c9795a96c094f4cbde4d65546aa9b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &72533505 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6893016994619297287, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
@@ -3758,6 +3769,10 @@ PrefabInstance:
       propertyPath: enemyAttack
       value: 
       objectReference: {fileID: 81111143}
+    - target: {fileID: 51065220114375236, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: timeBetweenShots
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 763028067741891679, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: cameraObject
       value: 
@@ -3766,6 +3781,10 @@ PrefabInstance:
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 72533505}
+    - target: {fileID: 1383143436720622816, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: timeBetweenShots
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1445269023667801558, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: gameOverCanves
       value: 
@@ -3776,7 +3795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3048179249348927773, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3048179249348927775, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_IsActive
@@ -3794,6 +3813,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.49
       objectReference: {fileID: 0}
+    - target: {fileID: 3659051174099282834, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 72533500}
+    - target: {fileID: 3659051174099282834, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: camerMain
+      value: 
+      objectReference: {fileID: 13034441}
+    - target: {fileID: 3659051174099282834, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: zommed_out
+      value: 43.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164084507752189881, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278162626858359632, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 72533500}
     - target: {fileID: 6962748152672904253, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.17
@@ -3820,6 +3859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1598636373, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+    - {fileID: 5278162626858359632, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
 --- !u!1001 &1884986307
 PrefabInstance:
@@ -4297,7 +4337,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1138380845, guid: c022f127baa765847bfc1b218398ae93, type: 3}
       propertyPath: enemyHealth
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 110877031395583095, guid: c022f127baa765847bfc1b218398ae93, type: 3}
       propertyPath: target

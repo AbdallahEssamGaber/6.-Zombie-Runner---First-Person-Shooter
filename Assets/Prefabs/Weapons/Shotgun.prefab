@@ -345,11 +345,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraObject: {fileID: 0}
-  range: 100
-  damage: 1
+  range: 22
+  damage: 5
   muzzleFlash: {fileID: 5651456886962254038}
   hitImpactVFX: {fileID: 8592554129470173569, guid: c972451442477794b8ff109f4767994d, type: 3}
   ammoSlot: {fileID: 0}
+  timeBetweenShots: 0.9
 --- !u!1 &2337074158997199752
 GameObject:
   m_ObjectHideFlags: 0
