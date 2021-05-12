@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 7022746707740948012}
   - component: {fileID: 1445269023667801558}
   - component: {fileID: 213276632}
+  - component: {fileID: 6893016994619297287}
   m_Layer: 0
   m_Name: RigidBodyFPSController
   m_TagString: Untagged
@@ -347,6 +348,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyAttack: {fileID: 0}
   hitPoints: 3
+--- !u!114 &6893016994619297287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76bcc4aefe15e344a0c0734bac4ac3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoAmount: 10
 --- !u!1 &37512127
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +409,7 @@ MonoBehaviour:
   damage: 1
   muzzleFlash: {fileID: 5651456886866695254}
   hitImpactVFX: {fileID: 8592554129470173569, guid: c972451442477794b8ff109f4767994d, type: 3}
+  ammoSlot: {fileID: 6893016994619297287}
 --- !u!1001 &533603456
 PrefabInstance:
   m_ObjectHideFlags: 0
