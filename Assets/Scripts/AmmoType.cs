@@ -1,7 +1,7 @@
 ﻿
 public enum AmmoType
 {
-    Bullets,
-    Shells,
-    Rockets
+    pistol,
+    shoutgun,
+    sniper
 }
