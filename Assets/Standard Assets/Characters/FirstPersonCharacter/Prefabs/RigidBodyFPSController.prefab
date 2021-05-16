@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAttack: {fileID: 0}
-  hitPoints: 3
+  hitPoints: 30
 --- !u!114 &6893016994619297287
 MonoBehaviour:
   m_ObjectHideFlags: 0

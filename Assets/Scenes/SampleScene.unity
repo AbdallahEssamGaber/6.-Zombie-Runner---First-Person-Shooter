@@ -3816,6 +3816,10 @@ PrefabInstance:
       propertyPath: enemyAttack
       value: 
       objectReference: {fileID: 81111143}
+    - target: {fileID: 213276632, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: hitPoints
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 51065220114375236, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: timeBetweenShots
       value: 1
@@ -4627,7 +4631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4543474937029335895, guid: c022f127baa765847bfc1b218398ae93, type: 3}
       propertyPath: m_StoppingDistance
-      value: 3.5
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c022f127baa765847bfc1b218398ae93, type: 3}
