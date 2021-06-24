@@ -1,96 +1,78 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    
     [SerializeField] float chaseRange = 5f;
     [SerializeField] float turnSpeed = 5f;
+
     NavMeshAgent navMeshAgent;
-    float rangeToEnemy = Mathf.Infinity;    //to not causing problems in the future "PROGRAMMING"
+    float distanceToTarget = Mathf.Infinity;
     bool isProvoked = false;
 
-    bool entered;
-
     EnemyHealth health;
+    Transform target;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         health = GetComponent<EnemyHealth>();
+
+        target = FindObjectOfType<PlayerHealth>().transform;
     }
+
     void Update()
     {
-
         if (health.IsDead())
         {
             enabled = false;
-            navMeshAgent.enabled = false; 
+            navMeshAgent.enabled = false;
         }
-
-        rangeToEnemy = Vector3.Distance(target.position, transform.position);
-
+        distanceToTarget = Vector3.Distance(target.position, transform.position);
         if (isProvoked)
         {
             EngageTarget();
-            isProvoked = false;
         }
-        else if (rangeToEnemy <= chaseRange)
+        else if (distanceToTarget <= chaseRange)
         {
-            entered = false;
             isProvoked = true;
-
         }
-        else if (entered)
-        {
-            GetComponent<Animator>().ResetTrigger("move");
-        }
-        else
-        {
-            GetComponent<Animator>().ResetTrigger("move");
-            GetComponent<Animator>().SetTrigger("Idle");
-        }
-
-
-
     }
+
     public void OnDamageTaken()
     {
-        entered = true;
         isProvoked = true;
     }
 
-    void EngageTarget()
+    private void EngageTarget()
     {
-        GetComponent<Animator>().ResetTrigger("Idle");
-        if (rangeToEnemy >= navMeshAgent.stoppingDistance)
+        FaceTarget();
+        if (distanceToTarget >= navMeshAgent.stoppingDistance)
         {
             ChaseTarget();
         }
-        else if (rangeToEnemy <= navMeshAgent.stoppingDistance)
+
+        if (distanceToTarget <= navMeshAgent.stoppingDistance)
         {
             AttackTarget();
         }
-
-
     }
 
-
-
-
-    void ChaseTarget()
+    private void ChaseTarget()
     {
-        GetComponent<Animator>().SetTrigger("move");
         GetComponent<Animator>().SetBool("attack", false);
+        GetComponent<Animator>().SetTrigger("move");
         navMeshAgent.SetDestination(target.position);
     }
-    void AttackTarget()
+
+    private void AttackTarget()
     {
-        FaceTarget();
         GetComponent<Animator>().SetBool("attack", true);
     }
-    void FaceTarget()
+
+    private void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));

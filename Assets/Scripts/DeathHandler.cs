@@ -4,18 +4,32 @@ using UnityEngine;
 
 public class DeathHandler : MonoBehaviour
 {
-    [SerializeField] Canvas gameOverCanves;
+    [SerializeField] Canvas gameOverCanvas;
+    [SerializeField] GameObject weapons;
 
-    void Start()
+    bool oneTimeBitch;
+    private void Start()
     {
-        gameOverCanves.enabled = false;
+        oneTimeBitch = true;
+        gameOverCanvas.enabled = false;
+    }
+
+
+
+    void Update()
+    {
+        if(gameObject.transform.position.y <= -1f && oneTimeBitch)
+        {
+            HandleDeath();
+        }
     }
 
     public void HandleDeath()
     {
-        gameOverCanves.enabled = true;
+        oneTimeBitch = false;
+        gameOverCanvas.enabled = true;
+        weapons.SetActive(false);
         Time.timeScale = 0;
-        FindObjectOfType<WeaponSwitcher>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

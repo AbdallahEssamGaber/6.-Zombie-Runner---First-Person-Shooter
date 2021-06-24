@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     PlayerHealth target;
-    [SerializeField] float deamage = 10f;
+    [SerializeField] float damage = 40f;
+    [SerializeField] float damageOnHead = 80f;
 
     void Start()
     {
@@ -15,7 +16,8 @@ public class EnemyAttack : MonoBehaviour
     public void AttackHitEvent()
     {
         if (target == null) return;
-
-        target.TakeDamage(deamage);
+        target.TakeDamage(damage);
+        target.GetComponent<DisplyDamage>().ShowDamageImpact();
     }
+
 }

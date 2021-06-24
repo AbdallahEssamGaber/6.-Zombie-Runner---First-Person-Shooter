@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -10,8 +10,10 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }
+
     public void QuitGame()
     {
         Application.Quit();
     }
+
 }

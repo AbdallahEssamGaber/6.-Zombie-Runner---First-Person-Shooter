@@ -1,84 +1,139 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-
-    [SerializeField] Camera cameraObject;
-    [SerializeField] float range = 0f;
-    [SerializeField] int damage = 1;
+    [SerializeField] Camera FPCamera;
+    [SerializeField] float range = 100f;
+    [SerializeField] float damage = 30f;
     [SerializeField] ParticleSystem muzzleFlash;
-    [SerializeField] GameObject hitImpactVFX;
+    [SerializeField] GameObject hitEffect;
     [SerializeField] Ammo ammoSlot;
     [SerializeField] AmmoType ammoType;
     [SerializeField] float timeBetweenShots = 0.5f;
+    [SerializeField] TextMeshProUGUI ammoText;
+    [SerializeField] Animator aim;
+    [SerializeField] Animator gunAnimator;
 
-    bool canShot = true;
-    private bool allowFire = true;
-    float timeBetweenShot = 0f;
+
+    bool canShoot = true;
+
+  
+
+
+
     private void OnEnable()
     {
-        // How long has it been since the last shot
-        float deltaTime = Time.time - timeBetweenShot;
-        if (!allowFire)
-        {
-            StartCoroutine(CoolDown(deltaTime));
-        }
-    }
-
-    private IEnumerator CoolDown(float passedTime)
-    {
-        yield return new WaitForSeconds(timeBetweenShots - passedTime);
-        allowFire = true;
+        canShoot = true;
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && ammoSlot.CurrentAmmo(ammoType) > 0 && canShot)
+
+        if (ammoType == AmmoType.Bullets)
+        {
+            if (ammoSlot.GetCurrentAmmo(ammoType) <= 0)
+            {
+                gameObject.GetComponentInChildren<SimpleShoot>().enabled = false;
+                canShoot = false;
+            }
+            if (aim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+            {  //If normalizedTime is 0 to 1 means animation is playing, if greater than 1 means finished
+            }
+            else
+            {
+                gunAnimator.ResetTrigger("Fire");
+
+            }
+        }
+
+        DisplayAmmo();
+
+        if (Input.GetMouseButtonDown(0) && canShoot == true)
         {
             StartCoroutine(Shoot());
         }
     }
 
+    void DisplayAmmo()
+    {
+        int currentAmmo = ammoSlot.GetCurrentAmmo(ammoType);
+        ammoText.text = currentAmmo.ToString();
+
+    }
     IEnumerator Shoot()
     {
-        allowFire = false;
-        // the last shot's time
-        timeBetweenShot = Time.time;
-        canShot = false;
-        muzzleFlash.Play();
-        RaycastThing();
-        ammoSlot.ReduceAmmo(ammoType);
+        canShoot = false;
+        if (ammoType != AmmoType.Bullets)
+        {
+            if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
+            {
+                PlayMuzzleFlash();
+            }
+            
+        }
+
+        ProcessRaycast();
+        ammoSlot.ReduceCurrentAmmo(ammoType);
+
         yield return new WaitForSeconds(timeBetweenShots);
-        timeBetweenShot = 0f;
-        allowFire = true;
-        canShot = true;
+        canShoot = true;
     }
 
-    void RaycastThing()
+    private void PlayMuzzleFlash()
     {
-        if (Physics.Raycast(cameraObject.transform.position, cameraObject.transform.forward, out RaycastHit hit, range))
-        {
-            HitImpact(hit);
-            EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
-            if (target == null) return;     //cuz the error if u hit smth dont have EnemyHealth
-            target.Damage(damage);
-
-
-        }
-        else    //just to making sure "PROGRAMMING"
-        {
-            return;
-        }
+        muzzleFlash.Play();
     }
 
-    void HitImpact(RaycastHit hit)
+    public void ProcessRaycast()
     {
-        GameObject hitImpactObj = Instantiate(hitImpactVFX, hit.point, Quaternion.LookRotation(hit.normal));
-        Destroy(hitImpactObj, 0.1f);
+        
+        RaycastHit hit;
+        if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
+        {
+            CreateHitImpact(hit);
+            if (hit.transform.tag == "head")
+            {
+                EnemyHealth target = hit.transform.GetComponentInParent<EnemyHealth>();
+                target.TakeDamage(20f);
+            }
+            else if (hit.transform.tag == "enemy")
+            {
+                EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
+                target.TakeDamage(damage);
+            }
+            
+            
+        }
+   
+
+        RaycastHit ss;
+        if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out ss))
+        {
+            hitterDamage targetB = ss.transform.GetComponent<hitterDamage>();
+            if (targetB == null) return;
+
+            targetB.TakeDamageHitter(damage);
+        }
+ 
+
+    }
+
+  
+
+    void CreateHitImpact(RaycastHit hit)
+    {
+        GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impact, .1f);
     }
 
 
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
 }

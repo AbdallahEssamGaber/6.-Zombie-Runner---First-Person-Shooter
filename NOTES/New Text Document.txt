@@ -11,7 +11,7 @@ mby the game will be dark and have a flashlight just can be on for a couple of m
 
 
 ----------------more organized "supposed to be"
--Enemy(s): the same idea in the video the enemy comes to u when u hit him/here and ofc the enemies have different speed movment and health.
+-Enemy(s): the same idea in the video the enemy comes to u when u hit him/her and ofc the enemies have different speed movment and health.
 
 -Weapons(s): it will be Firearm: 
 1.Glock 17: one click one shot - 1 Shot -> 20 Damage |range is not that long "if u can make it!"
@@ -28,3 +28,9 @@ there is normal light its: LED Flashlights | small battary: mid the lighting . b
 -Environment: dark zombie game not that big world 
 and have zombies dead on the floor and a thing have an animation moving like a platform....the target in the game is to go to find a fan cuz the weather is hot :) and for the future fight for stupid needed things :)
 mby put the ammo in hard places and well he need the ammo..
+
+
+
+
+
+Dont shoot when dead

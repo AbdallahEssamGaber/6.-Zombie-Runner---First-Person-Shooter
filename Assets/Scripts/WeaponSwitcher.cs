@@ -7,18 +7,17 @@ public class WeaponSwitcher : MonoBehaviour
 {
     [SerializeField] int currentWeapon = 0;
 
-
     void Start()
     {
-        SetWeaponActive();  //thats to turn just one weapon in the first without clicking anything...
+        SetWeaponActive();
     }
 
     void Update()
     {
         int previousWeapon = currentWeapon;
 
-        processKeyInput();
-        processScrollWheel();
+        ProcessKeyInput();
+        ProcessScrollWheel();
 
         if (previousWeapon != currentWeapon)
         {
@@ -26,24 +25,7 @@ public class WeaponSwitcher : MonoBehaviour
         }
     }
 
- 
-    void processKeyInput()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            currentWeapon = 0;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            currentWeapon = 1;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            currentWeapon = 2;
-        }
-    }
-
-    void processScrollWheel()
+    private void ProcessScrollWheel()
     {
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
@@ -56,7 +38,8 @@ public class WeaponSwitcher : MonoBehaviour
                 currentWeapon++;
             }
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") > 0)
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             if (currentWeapon <= 0)
             {
@@ -67,17 +50,31 @@ public class WeaponSwitcher : MonoBehaviour
                 currentWeapon--;
             }
         }
-
-
     }
 
-    void SetWeaponActive()
+    private void ProcessKeyInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currentWeapon = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentWeapon = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            currentWeapon = 2;
+        }
+    }
+
+    private void SetWeaponActive()
     {
         int weaponIndex = 0;
-        
-        foreach(Transform weapon in transform)
+
+        foreach (Transform weapon in transform)
         {
-            if(weaponIndex == currentWeapon)
+            if (weaponIndex == currentWeapon)
             {
                 weapon.gameObject.SetActive(true);
             }
@@ -85,10 +82,9 @@ public class WeaponSwitcher : MonoBehaviour
             {
                 weapon.gameObject.SetActive(false);
             }
-
             weaponIndex++;
         }
+
     }
 
-  
 }

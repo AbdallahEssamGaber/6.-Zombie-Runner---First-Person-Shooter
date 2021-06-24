@@ -1,32 +1,32 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    
-    public int enemyHealth = 3;
+    [SerializeField] float hitPoints = 100f;
+
     bool isDead = false;
 
-
-    public bool IsDead ()
+    public bool IsDead()
     {
         return isDead;
     }
-    public void Damage(int damage)
+
+    public void TakeDamage(float damage)
     {
         BroadcastMessage("OnDamageTaken");
-        enemyHealth -= damage;
-        if (enemyHealth <= 0)
+        Debug.Log(damage);
+        hitPoints -= damage;
+        if (hitPoints <= 0)
         {
             Die();
         }
     }
 
-    void Die()
+    private void Die()
     {
-        if (isDead) return; 
+        if (isDead) return;
         isDead = true;
         GetComponent<Animator>().SetTrigger("die");
     }
