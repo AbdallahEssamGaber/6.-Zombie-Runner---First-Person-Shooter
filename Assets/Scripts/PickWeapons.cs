@@ -7,7 +7,7 @@ public class PickWeapons : MonoBehaviour
     [SerializeField] GameObject[] setActive;
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" ) 
+        if (other.gameObject.tag == "Player") 
         {
             foreach(GameObject obj in setActive)
             {
