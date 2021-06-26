@@ -27,6 +27,7 @@ public class WeaponZoom : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
+            Debug.Log("test");
             ZoomOn();
 
         }
