@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -19,7 +19,6 @@ public class EnemyAI : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         health = GetComponent<EnemyHealth>();
-
         target = FindObjectOfType<PlayerHealth>().transform;
     }
 
@@ -29,6 +28,7 @@ public class EnemyAI : MonoBehaviour
         {
             enabled = false;
             navMeshAgent.enabled = false;
+            return;
         }
         distanceToTarget = Vector3.Distance(target.position, transform.position);
         if (isProvoked)

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.394
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.394}
+  m_IndirectSpecularColor: {r: 0.046517335, g: 0.074847974, b: 0.13768932, a: 0.394}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -153,6 +153,11 @@ PrefabInstance:
       objectReference: {fileID: 1303573687}
     - target: {fileID: 6219776556334499024, guid: 3580e2b90bc1aa54181a47664bb80675,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219776556334499024, guid: 3580e2b90bc1aa54181a47664bb80675,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 58.52
       objectReference: {fileID: 0}
@@ -168,6 +173,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6219776556334499024, guid: 3580e2b90bc1aa54181a47664bb80675,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.25710258
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219776556334499024, guid: 3580e2b90bc1aa54181a47664bb80675,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.67097944
       objectReference: {fileID: 0}
@@ -180,16 +190,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.30032524
-      objectReference: {fileID: 0}
-    - target: {fileID: 6219776556334499024, guid: 3580e2b90bc1aa54181a47664bb80675,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.25710258
-      objectReference: {fileID: 0}
-    - target: {fileID: 6219776556334499024, guid: 3580e2b90bc1aa54181a47664bb80675,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6219776556334499024, guid: 3580e2b90bc1aa54181a47664bb80675,
         type: 3}
@@ -447,6 +447,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &100157821
 Canvas:
   m_ObjectHideFlags: 0
@@ -734,6 +735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1238,6 +1240,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &211886701
 Canvas:
   m_ObjectHideFlags: 0
@@ -2575,6 +2578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2744,6 +2748,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &549376756 stripped
@@ -3389,6 +3394,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 5.98e-43, y: 7.1e-44, z: 0, w: 5.684142e-10}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &705507995
@@ -6344,6 +6350,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1303573691
 Canvas:
   m_ObjectHideFlags: 0
@@ -6607,6 +6614,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1459136954
 Canvas:
   m_ObjectHideFlags: 0
@@ -12078,6 +12086,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &2013187288
 Canvas:
   m_ObjectHideFlags: 0
@@ -14463,6 +14472,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2292672369677778352, guid: bec5e86d5edf31c4980ac68ae9c8030c,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292672369677778352, guid: bec5e86d5edf31c4980ac68ae9c8030c,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 99.74
       objectReference: {fileID: 0}
@@ -14478,6 +14492,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2292672369677778352, guid: bec5e86d5edf31c4980ac68ae9c8030c,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.97334594
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292672369677778352, guid: bec5e86d5edf31c4980ac68ae9c8030c,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -14490,16 +14509,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2292672369677778352, guid: bec5e86d5edf31c4980ac68ae9c8030c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.97334594
-      objectReference: {fileID: 0}
-    - target: {fileID: 2292672369677778352, guid: bec5e86d5edf31c4980ac68ae9c8030c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2292672369677778352, guid: bec5e86d5edf31c4980ac68ae9c8030c,
         type: 3}
@@ -15020,6 +15029,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55.65
       objectReference: {fileID: 0}
@@ -15032,6 +15045,10 @@ PrefabInstance:
       value: 112.2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6199845
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -15041,14 +15058,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6199845
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
@@ -15068,13 +15077,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1517903126}
     - target: {fileID: 1074226174, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
-      propertyPath: scoopOverlay
-      value: 
-      objectReference: {fileID: 1010051587}
-    - target: {fileID: 1074226174, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: reticle
       value: 
       objectReference: {fileID: 1459136950}
+    - target: {fileID: 1074226174, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: scoopOverlay
+      value: 
+      objectReference: {fileID: 1010051587}
     - target: {fileID: 1074226175, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: ammoText
       value: 
@@ -15086,18 +15095,18 @@ PrefabInstance:
     - target: {fileID: 404430234848238394, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1869670054142922472, guid: c6453f8e1f814744d8b94e5a6d1f9942,
-        type: 3}
-      propertyPath: gameOverCanvas
-      value: 
-      objectReference: {fileID: 100157821}
     - target: {fileID: 1869670054142922472, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: weapons
       value: 
       objectReference: {fileID: 585467583}
+    - target: {fileID: 1869670054142922472, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+        type: 3}
+      propertyPath: gameOverCanvas
+      value: 
+      objectReference: {fileID: 100157821}
     - target: {fileID: 2351781715741137526, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: impactCanves
