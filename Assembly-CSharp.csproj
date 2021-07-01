@@ -37,7 +37,6 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Asset Packs\Standard Assets\Utility\SimpleActivatorMenu.cs" />
-     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshSurface.cs" />
      <Compile Include="Assets\Asset Packs\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Nokobot\Modern Guns - Handgun\_Demo Assets\SimpleShoot.cs" />
      <Compile Include="Assets\Scripts\FlashLIght.cs" />
@@ -75,7 +74,6 @@
      <Compile Include="Assets\Asset Packs\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
      <Compile Include="Assets\Asset Packs\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
      <Compile Include="Assets\Asset Packs\Standard Assets\Utility\TimedObjectDestructor.cs" />
-     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifierVolume.cs" />
      <Compile Include="Assets\Asset Packs\Standard Assets\Characters\RollerBall\Scripts\Ball.cs" />
      <Compile Include="Assets\Scripts\PickWeapons.cs" />
      <Compile Include="Assets\Asset Packs\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
@@ -100,7 +98,6 @@
      <Compile Include="Assets\Asset Packs\Standard Assets\Utility\FollowTarget.cs" />
      <Compile Include="Assets\Asset Packs\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Asset Packs\Standard Assets\ParticleSystems\Scripts\ExtinguishableParticleSystem.cs" />
-     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshLink.cs" />
      <Compile Include="Assets\Scripts\AmmoType.cs" />
      <Compile Include="Assets\Asset Packs\Standard Assets\Utility\ForcedReset.cs" />
      <Compile Include="Assets\Asset Packs\Standard Assets\Utility\ParticleSystemDestroyer.cs" />
@@ -113,7 +110,6 @@
      <Compile Include="Assets\Asset Packs\Standard Assets\Utility\AlphaButtonClickMask.cs" />
      <Compile Include="Assets\Asset Packs\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
      <Compile Include="Assets\Asset Packs\Standard Assets\Cameras\Scripts\PivotBasedCameraRig.cs" />
-     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifier.cs" />
      <Compile Include="Assets\Asset Packs\Standard Assets\Utility\AutoMoveAndRotate.cs" />
      <Compile Include="Assets\Asset Packs\Standard Assets\Utility\FOVKick.cs" />
      <Compile Include="Assets\Scripts\LoadTheGame.cs" />
