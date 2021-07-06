@@ -34,7 +34,7 @@ public class Weapon : MonoBehaviour
     void Update()
     {
 
-        if (ammoType == AmmoType.Bullets)
+        if (ammoType == AmmoType.Pistol)
         {
             if (ammoSlot.GetCurrentAmmo(ammoType) <= 0)
             {
@@ -49,7 +49,7 @@ public class Weapon : MonoBehaviour
                 gunAnimator.ResetTrigger("Fire");
 
             }
-        } else if (ammoType != AmmoType.Bullets)
+        } else if (ammoType != AmmoType.Pistol)
         {
             if (ammoSlot.GetCurrentAmmo(ammoType) <= 0)
             {
@@ -74,7 +74,7 @@ public class Weapon : MonoBehaviour
     IEnumerator Shoot()
     {
         canShoot = false;
-        if (ammoType != AmmoType.Bullets)
+        if (ammoType != AmmoType.Pistol)
         {
             if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
             {
