@@ -49,6 +49,12 @@ public class Weapon : MonoBehaviour
                 gunAnimator.ResetTrigger("Fire");
 
             }
+        } else if (ammoType != AmmoType.Bullets)
+        {
+            if (ammoSlot.GetCurrentAmmo(ammoType) <= 0)
+            {
+                canShoot = false;
+            }
         }
 
         DisplayAmmo();
