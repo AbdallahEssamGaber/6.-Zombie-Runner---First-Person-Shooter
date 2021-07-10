@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100f;
-    [SerializeField] GameObject dieadBlood;
+    [SerializeField] ParticleSystem deadBlood;
 
     bool isDead = false;
 
@@ -28,11 +28,15 @@ public class EnemyHealth : MonoBehaviour
     {
         if (isDead) return;
         isDead = true;
+        GetComponent<CapsuleCollider>().enabled = false;
+        GameObject.FindGameObjectWithTag("head").GetComponent<SphereCollider>().enabled = false;
         GetComponent<Animator>().SetTrigger("die");
-
-        Destroy(gameObject, 3f);
-        GameObject ins = Instantiate(dieadBlood, gameObject.transform.position, Quaternion.identity);
+        Invoke(nameof(Bleed),1);
+    }
+    private void Bleed()
+    {
+        ParticleSystem ins = Instantiate(deadBlood, gameObject.transform.position, Quaternion.identity);
         ins.transform.parent = null;
-        Destroy(ins, 8f);
+        Destroy(ins.gameObject, ins.main.duration+5);
     }
 }

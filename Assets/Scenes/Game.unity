@@ -3734,7 +3734,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2574
+  m_Name: pb_Mesh-15066
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5131,7 +5131,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-7140
+  m_Name: pb_Mesh-19632
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12059,7 +12059,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-7128
+  m_Name: pb_Mesh-19620
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12968,7 +12968,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-7152
+  m_Name: pb_Mesh-19644
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14042,7 +14042,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6348
+  m_Name: pb_Mesh-19988
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23415,7 +23415,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2562
+  m_Name: pb_Mesh-15054
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27102,7 +27102,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2550
+  m_Name: pb_Mesh-15042
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27511,6 +27511,10 @@ PrefabInstance:
       propertyPath: far clip plane
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 54956251, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: ammoText
       value: 
@@ -27522,12 +27526,17 @@ PrefabInstance:
     - target: {fileID: 54956251, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: hitEffectBody
       value: 
-      objectReference: {fileID: 840808118410836708, guid: 4e79074dccc15c74b87eb1b6a3193a73,
+      objectReference: {fileID: 1766814854480755888, guid: 2763b4f231e98c44484ff0709978ae0d,
         type: 3}
     - target: {fileID: 54956251, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: hitEffectRest
       value: 
-      objectReference: {fileID: 840808118410836708, guid: 4e79074dccc15c74b87eb1b6a3193a73,
+      objectReference: {fileID: 1766814854480755888, guid: c0afdbdb1803a3242974df91a270faed,
+        type: 3}
+    - target: {fileID: 54956251, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: hitEffectEnemy
+      value: 
+      objectReference: {fileID: 1766814854480755888, guid: 2763b4f231e98c44484ff0709978ae0d,
         type: 3}
     - target: {fileID: 1074226174, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: reticle
@@ -27548,12 +27557,17 @@ PrefabInstance:
     - target: {fileID: 1074226175, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: hitEffectBody
       value: 
-      objectReference: {fileID: 840808118410836708, guid: 4e79074dccc15c74b87eb1b6a3193a73,
+      objectReference: {fileID: 1766814854480755888, guid: 2763b4f231e98c44484ff0709978ae0d,
         type: 3}
     - target: {fileID: 1074226175, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: hitEffectRest
       value: 
-      objectReference: {fileID: 840808118410836708, guid: 4e79074dccc15c74b87eb1b6a3193a73,
+      objectReference: {fileID: 1766814854480755888, guid: c0afdbdb1803a3242974df91a270faed,
+        type: 3}
+    - target: {fileID: 1074226175, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: hitEffectEnemy
+      value: 
+      objectReference: {fileID: 1766814854480755888, guid: 2763b4f231e98c44484ff0709978ae0d,
         type: 3}
     - target: {fileID: 2104037080, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: ammoText
@@ -27566,12 +27580,17 @@ PrefabInstance:
     - target: {fileID: 2104037080, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: hitEffectBody
       value: 
-      objectReference: {fileID: 840808118410836708, guid: 4e79074dccc15c74b87eb1b6a3193a73,
+      objectReference: {fileID: 1766814854480755888, guid: 2763b4f231e98c44484ff0709978ae0d,
         type: 3}
     - target: {fileID: 2104037080, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: hitEffectRest
       value: 
-      objectReference: {fileID: 840808118410836708, guid: 4e79074dccc15c74b87eb1b6a3193a73,
+      objectReference: {fileID: 1766814854480755888, guid: c0afdbdb1803a3242974df91a270faed,
+        type: 3}
+    - target: {fileID: 2104037080, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: hitEffectEnemy
+      value: 
+      objectReference: {fileID: 1766814854480755888, guid: 2763b4f231e98c44484ff0709978ae0d,
         type: 3}
     - target: {fileID: 404430234848238394, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
@@ -27593,10 +27612,15 @@ PrefabInstance:
       propertyPath: impactCanves
       value: 
       objectReference: {fileID: 211886701}
+    - target: {fileID: 6083546874002943102, guid: c6453f8e1f814744d8b94e5a6d1f9942,
+        type: 3}
+      propertyPath: ammoSlots.Array.data[0].ammoAmount
+      value: 50000
+      objectReference: {fileID: 0}
     - target: {fileID: 8649538756767928882, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8649538756767928883, guid: c6453f8e1f814744d8b94e5a6d1f9942,
         type: 3}
