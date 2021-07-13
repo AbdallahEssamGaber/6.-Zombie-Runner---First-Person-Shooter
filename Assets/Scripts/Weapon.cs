@@ -9,7 +9,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 30f;
-    [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] private float destroyTimer = 2f;
+    [SerializeField] private Transform barrelLocation;
+    [SerializeField] GameObject muzzleFlash;
     [SerializeField] GameObject hitEffectRest;
     [SerializeField] GameObject hitEffectEnemy;
     [SerializeField] Ammo ammoSlot;
@@ -92,8 +94,15 @@ public class Weapon : MonoBehaviour
 
     private void PlayMuzzleFlash()
     {
-        muzzleFlash.Play();
+        //Create the muzzle flash
+        GameObject tempFlash;
+        tempFlash = Instantiate(muzzleFlash, barrelLocation.position, barrelLocation.rotation);
+
+        //Destroy the muzzle flash effect
+        Destroy(tempFlash, destroyTimer);
     }
+
+ 
 
     public void ProcessRaycast()
     {
