@@ -12,7 +12,7 @@ public class WeaponZoom : MonoBehaviour
     [SerializeField] GameObject reticle;
     [SerializeField] GameObject weaponCamera;
     [SerializeField] Camera camerMain;
-    [SerializeField] RigidbodyFirstPersonController fpsController;
+    [SerializeField] FirstPersonController fpsController;
     [SerializeField] float zommed_in = 10, zommed_out = 10;
     [SerializeField] float zommed_in_sen = 0.5f, zommed_out_sen = 2f;
 
@@ -43,8 +43,8 @@ public class WeaponZoom : MonoBehaviour
         weaponCamera.SetActive(false);
 
         camerMain.fieldOfView = zommed_in;
-        fpsController.mouseLook.XSensitivity = zommed_in_sen;
-        fpsController.mouseLook.YSensitivity = zommed_in_sen;
+        fpsController.sensitivityX = zommed_in_sen;
+        fpsController.sensitivityY = zommed_in_sen;
     }
 
     void ZoomOut()
@@ -55,8 +55,8 @@ public class WeaponZoom : MonoBehaviour
         weaponCamera.SetActive(true);
 
         camerMain.fieldOfView = zommed_out;
-        fpsController.mouseLook.XSensitivity = zommed_out_sen;
-        fpsController.mouseLook.YSensitivity = zommed_out_sen;
+        fpsController.sensitivityX = zommed_out_sen;
+        fpsController.sensitivityY = zommed_out_sen;
     }
 
     IEnumerator ScoopOverlay()

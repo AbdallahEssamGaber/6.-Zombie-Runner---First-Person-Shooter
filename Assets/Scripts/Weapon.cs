@@ -9,9 +9,11 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 30f;
-    [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] private float destroyTimer = 2f;
+    [SerializeField] private Transform barrelLocation;
+    [SerializeField] GameObject muzzleFlash;
     [SerializeField] GameObject hitEffectRest;
-    [SerializeField] GameObject hitEffectBody;
+    [SerializeField] GameObject hitEffectEnemy;
     [SerializeField] Ammo ammoSlot;
     [SerializeField] AmmoType ammoType;
     [SerializeField] float timeBetweenShots = 0.5f;
@@ -92,8 +94,15 @@ public class Weapon : MonoBehaviour
 
     private void PlayMuzzleFlash()
     {
-        muzzleFlash.Play();
+        //Create the muzzle flash
+        GameObject tempFlash;
+        tempFlash = Instantiate(muzzleFlash, barrelLocation.position, barrelLocation.rotation);
+
+        //Destroy the muzzle flash effect
+        Destroy(tempFlash, destroyTimer);
     }
+
+ 
 
     public void ProcessRaycast()
     {
@@ -102,17 +111,11 @@ public class Weapon : MonoBehaviour
         if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
         {
 
-            if (hit.transform.tag == "head")
+            if (hit.transform.tag == "head" || hit.transform.tag == "enemy")
             {
                 CreateHitImpactBody(hit);
                 EnemyHealth target = hit.transform.GetComponentInParent<EnemyHealth>();
                 target.TakeDamage(damage * 2);
-            }
-            else if (hit.transform.tag == "enemy")
-            {
-                CreateHitImpactBody(hit);
-                EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
-                target.TakeDamage(damage);
             }
             else 
             {
@@ -121,8 +124,6 @@ public class Weapon : MonoBehaviour
             
             
         }
-   
-
         RaycastHit ss;
         if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out ss))
         {
@@ -144,8 +145,8 @@ public class Weapon : MonoBehaviour
     } 
     void CreateHitImpactBody(RaycastHit hit)
     {
-        GameObject impact = Instantiate(hitEffectBody, hit.point, Quaternion.LookRotation(hit.normal));
-        Destroy(impact, .1f);
+        GameObject impact = Instantiate(hitEffectEnemy, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(impact, 1f);
     }
 
 
