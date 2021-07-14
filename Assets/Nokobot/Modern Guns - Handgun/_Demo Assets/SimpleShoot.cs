@@ -50,15 +50,7 @@ public class SimpleShoot : MonoBehaviour
     //This function creates the bullet behavior
     void Shoot()
     {
-        if (muzzleFlashPrefab)
-        {
-            //Create the muzzle flash
-            GameObject tempFlash;
-            tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
-
-            //Destroy the muzzle flash effect
-            Destroy(tempFlash, destroyTimer);
-        }
+        
 
         //cancels if there's no bullet prefeb
         if (!bulletPrefab)

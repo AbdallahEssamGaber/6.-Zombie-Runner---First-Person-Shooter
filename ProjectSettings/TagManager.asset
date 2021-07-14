@@ -8,6 +8,10 @@ TagManager:
   - head
   - Fire
   - enemy
+  - Pistol
+  - Shotgun
+  - Carbine
+  - Reticle
   layers:
   - Default
   - TransparentFX

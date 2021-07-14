@@ -1,0 +1,506 @@
+[33mcommit 1f3070df12360fafb38ae89f83448924b08e8217[m[33m ([m[1;36mHEAD -> [m[1;32mstaged[m[33m, [m[1;31morigin/staged[m[33m)[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Tue Jul 13 23:48:38 2021 +0200
+
+    Updated Standard Assets
+
+[33mcommit e187b3d11f49fd4822f5d96576b2c350d70ac1fd[m
+Merge: 215cb91 5b7b84a
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Tue Jul 13 22:12:48 2021 +0200
+
+    Merge branch 'MBranch' into staged
+
+[33mcommit 5b7b84ad760b2ee37a6e6e21011f7ec4e97d4ab7[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Tue Jul 13 21:51:39 2021 +0200
+
+    علشان معملتش ميرج للفيلز من الأول
+
+[33mcommit 2c4fe5c4bb641d1042a26318fab18ba0fa3c09b1[m[33m ([m[1;31morigin/MBranch[m[33m, [m[1;32mMBranch[m[33m)[m
+Author: Amr Saad MEGA <amrsa3dmega@yahoo.com>
+Date:   Tue Jul 13 18:17:03 2021 +0200
+
+    Added lights
+
+[33mcommit 91b98fdd365c842c16a896744883074ed66978e1[m
+Author: Amr Saad MEGA <amrsa3dmega@yahoo.com>
+Date:   Tue Jul 13 13:28:54 2021 +0200
+
+    Expanded the level
+
+[33mcommit 215cb91a0f900b3156efba84d74f831e368eb22d[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sat Jul 10 18:32:41 2021 +0200
+
+    سلكان
+
+[33mcommit 443783838618a8da4f5646d64c3147f1269227da[m
+Author: Amr Saad MEGA <amrsa3dmega@yahoo.com>
+Date:   Sat Jul 10 14:19:26 2021 +0200
+
+    Hit blood VFX, Enemy's death bleed
+
+[33mcommit 114b0a283d03857f4d72a43b18b6774f7533c108[m
+Author: Amr Saad MEGA <amrsa3dmega@yahoo.com>
+Date:   Fri Jul 9 21:26:05 2021 +0200
+
+    Bake the environment for the enemy's navMesh
+
+[33mcommit a65be4a2d205572aef2b6a81c962972ac6ea56de[m
+Merge: 634ff2b eca241a
+Author: Amr Saad MEGA <amrsa3dmega@yahoo.com>
+Date:   Fri Jul 9 21:18:20 2021 +0200
+
+    Merge branch 'staged' into MBranch
+    
+    # Conflicts:
+    #       Assembly-CSharp.csproj
+    #       Assets/Scenes/Game.unity
+
+[33mcommit eca241a602a1459dfcdd207113cc3298f2f5890e[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Thu Jul 8 11:21:55 2021 +0200
+
+    commit for free!!!
+
+[33mcommit 81b0c1cf1fc3f9dc56bf7d6bc8c73d4e8d44dff1[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Tue Jul 6 17:56:53 2021 +0200
+
+    Put Names For Ammo Type (Pistol,     Shotgun,     Sniper) to be ready to make hands if we did
+
+[33mcommit 78708774a542e0c808efcb0c6842e163b7476546[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Tue Jul 6 17:47:43 2021 +0200
+
+    Fixed The Shotgun And Sniper Problem With Bullet
+
+[33mcommit 1971a9e52b793b672d3cb541017b98ebf57fd2bf[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Mon Jul 5 11:58:27 2021 +0200
+
+    Enemy(headshot - effects on hit)
+
+[33mcommit 288408e3a2a8db14065e9a023acdb7b8c7c0b217[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Mon Jul 5 10:38:56 2021 +0200
+
+    Mega Updated The Level .1
+
+[33mcommit 634ff2bad52d1243e5f726dd9df9e958ea0e365f[m
+Author: Amr Saad MEGA <amrsa3dmega@yahoo.com>
+Date:   Thu Jul 1 02:36:29 2021 +0200
+
+    Redesigned a beta level
+
+[33mcommit a2e41a6a8794c869d1d48513cbd84de4907b83fb[m[33m ([m[1;32mmain[m[33m)[m
+Author: Amr Saad MEGA <amrsa3dmega@yahoo.com>
+Date:   Tue Jun 29 20:13:47 2021 +0200
+
+    updated from ag
+
+[33mcommit edc391aea309acafa285cb0a50a4f92d958e83d2[m
+Author: Amr Saad MEGA <amrsa3dmega@yahoo.com>
+Date:   Tue Jun 29 19:51:48 2021 +0200
+
+    back to the field
+    
+    just fixed bugs
+
+[33mcommit 96d98b60fef69a388095203ed06542fe91e604c2[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sat Jun 26 19:11:06 2021 +0200
+
+    fixed the Weapons and take damage
+
+[33mcommit f981bed1bc7bb0ba6cba58de87134eca856683bf[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sat Jun 26 16:43:38 2021 +0200
+
+    Set The Weapons Again
+
+[33mcommit a6bffb2728f2bf800e0471352afa10e036963bc5[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Fri Jun 25 19:24:37 2021 +0200
+
+    After Hours Finnaly I can upload shit
+
+[33mcommit 8f9304cc2aeebfdc055e1ddb80ae4b0b6830c4e7[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Thu Jun 24 20:34:57 2021 +0200
+
+    I think its gonna work
+
+[33mcommit 4ce745e1e32e24abd036578086fed351d5d2d243[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Thu Jun 24 18:46:29 2021 +0200
+
+    test hope it will work bye from the commandsssss bitch
+
+[33mcommit 6d6a4d85558ed260d8cbb83ebb3107c306087b69[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Tue May 18 20:21:16 2021 +0200
+
+    45. Flex Your Level Design Muscles
+    
+    just adding like....a placeholder for the design
+
+[33mcommit 74be00eb074325b133d2da0b0b16a5837a4f9de8[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sun May 16 12:51:52 2021 +0200
+
+    44. Quick Zombie Attack Challenge
+    
+    adding zombies animation and fix the damage for the player by adding animation event
+
+[33mcommit e58a255c056fd0a0c84901061261a9cc68c85233[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sun May 16 11:39:56 2021 +0200
+
+    40. Ammo Pickup - Part 1 && 41. Ammo Pickup - Part 2
+    
+    so adding ammo pickup w all the functionalities
+
+[33mcommit 26216c606e01d68f4b43183acd699f8e2683b099[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Fri May 14 15:10:59 2021 +0200
+
+    39. Quick Bug Fix Challenge
+    
+    fix the zoom in problem when u change a weapon
+
+[33mcommit 1ce231c32af3c83356421c7d02b14da95ac28370[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Fri May 14 15:03:47 2021 +0200
+
+    38. Different Weapon Different Ammo
+
+[33mcommit 4f871a72cc0826bf852aa0dab6c5e3cd394100ec[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Fri May 14 14:42:47 2021 +0200
+
+    37. Public Enum & Private Class
+    
+    talking abt enum put the basic structure for different ammo different weapon
+
+[33mcommit eff2d92eca9354b0befeb333661accaf5c12fc00[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Wed May 12 06:31:18 2021 +0200
+
+    36. Player Input To Select Weapon
+    
+    switching weapons by scroll wheel and numbers
+
+[33mcommit 323a5ce6cfcc40a1435e5df0429a1d122d50fc62[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Wed May 12 05:59:34 2021 +0200
+
+    35. Set Active Weapon
+    
+    Using Foreach to go throw all the weapons and switch WITHOUT input
+
+[33mcommit ce8fc7b5252bd9c218951479c121fc9300c6432e[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Wed May 12 05:36:14 2021 +0200
+
+    34. Weapon Differentiation
+    
+    make every weapon different by changing range & damage....etc
+
+[33mcommit 3a2f3c2aefe174a4fc22153bdbd07e014ac19685[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Wed May 12 04:45:54 2021 +0200
+
+    33. Multiple Weapon Types
+    
+    adding more than one gun
+
+[33mcommit 9e6bc540e730cac480a5ddc626cb3d597db7c681[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Wed May 12 04:12:14 2021 +0200
+
+    32. Basic Ammo Functionality
+    
+    Adding Ammo For One Weapon and using public funcs
+
+[33mcommit 38910f8350ccba5c3fc6d0ed8b86dc9b703e99be[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Fri May 7 14:31:52 2021 +0200
+
+    forget abt it
+    
+    ##test
+
+[33mcommit 57129622adc90a56b68e549d72acc2fff850ae34[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Fri May 7 14:30:53 2021 +0200
+
+    ss
+    
+    # test
+
+[33mcommit 31000dc25d23ec45d35824bc24970e191833dddc[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Fri May 7 14:30:19 2021 +0200
+
+    31. Weapon Zoom - Mouse Sensitivity
+
+[33mcommit 0c7c4517ca2ed1f7316f555a796e42da67555820[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Fri May 7 14:09:08 2021 +0200
+
+    29. Weapon Zoom - Field Of View
+    
+    to make zoom like sniper and know more abt Input things and camera stuff
+
+[33mcommit 0c3f6625401aba4ea059fb77828b6b98758dd1cf[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Tue May 4 13:21:38 2021 +0200
+
+    Update New Text Document.txt
+
+[33mcommit a49a089167664c4eccd49f1c80ad7787605384ae[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Tue May 4 13:16:53 2021 +0200
+
+    Revert "Update Notes"
+    
+    This reverts commit 965ecba16effc7b15f423f554a10e93706ead708.
+
+[33mcommit 5c102952c9fee128914444d4504a840c68b37ac1[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Tue May 4 13:10:51 2021 +0200
+
+    Revert "26. Using BroadcastMessage"
+    
+    This reverts commit 74d81aeb3629004621b28ffa41249ecf971d67e7.
+
+[33mcommit 965ecba16effc7b15f423f554a10e93706ead708[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Tue May 4 13:10:34 2021 +0200
+
+    Update Notes
+
+[33mcommit 74d81aeb3629004621b28ffa41249ecf971d67e7[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sun May 2 13:23:04 2021 +0200
+
+    26. Using BroadcastMessage
+    
+    abt BroadcastMessage baby
+
+[33mcommit ecbddbaf33973bd35e3d6a315549a180ac848043[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sun May 2 12:05:53 2021 +0200
+
+    25. Create A Death Handler
+    
+    Make the UI more logic
+
+[33mcommit c1d108aa03f7413b82bfa07ec51c67c35b2c8f1f[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sun May 2 11:37:26 2021 +0200
+
+    24. Game Over User Interface
+    
+    Making buttons and text prototype for   -you dead
+
+[33mcommit 41ea636726a491d68bc02a9383cc51805e733f09[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sat May 1 00:54:35 2021 +0200
+
+    D
+    
+    So lets kick the asses again
+
+[33mcommit 66028fcc4a9b994a2af16b3cdc462515325648d3[m
+Merge: 17d12dc 86362ca
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sat May 1 00:54:04 2021 +0200
+
+    Merge branch 'main' of https://github.com/AbdallahEssamGaber/6.-Zombie-Runner---First-Person-Shooter into main
+
+[33mcommit 17d12dcb75b583aa0761b96f98baa30e4c77e0f5[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sat May 1 00:53:35 2021 +0200
+
+    D
+    
+    So lets kick the asses again
+
+[33mcommit 86362ca63db5053052530e0c80e345b00cee8c3f[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Thu Apr 8 01:40:50 2021 +0200
+
+    22. Create Player Health Class
+    
+    make player health system
+
+[33mcommit 1b543abc51a58e91e6e880d89ee5ca2c8264324d[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Thu Apr 8 00:38:16 2021 +0200
+
+    21. Use Animation Events
+    
+    Yo so what abt if u want to make animation event like in this min of this animation do smth in code how to do it that whats video talking abt
+
+[33mcommit 9d2c0b72679c4810e3145787592544fbbb28685c[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Thu Apr 8 00:01:52 2021 +0200
+
+    just update to make Idle state working
+    
+    so when I went to Mega's house he inspired me to do what am doing rn
+
+[33mcommit 189b737871ffdafb9d6565b4cbd301f1275f6903[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sun Apr 4 14:45:20 2021 +0200
+
+    20. Trigger Animation In Code
+    
+    make conditions by code .... finnally u remeber
+    4_The Project That I liked it a little bit
+    ?
+
+[33mcommit 106fa8d2d587a29a57df62c233b7507d9533687e[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sun Apr 4 13:15:43 2021 +0200
+
+    18. Animator Transition Conditions
+    
+    there was exit time to transition now its not ...now its conditions..so I made trigger and a bool
+
+[33mcommit ca32a146fe70d8c49d603283a6622c054b62a380[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sun Apr 4 13:05:26 2021 +0200
+
+    17. Creating A Simple Animation
+    
+    Created some animation for the sake of practice
+
+[33mcommit 7a321d80ab4c083c385a47f34bfb978333401c25[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Thu Apr 1 15:10:55 2021 +0200
+
+    16. Introduction To Animator Controller
+
+[33mcommit d4b97c126c0061e7a82494b7bc560aa252b6612c[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Thu Apr 1 14:35:53 2021 +0200
+
+    15. Creating Shooting Hit Effect
+    
+    yh in this video we made something like ...a spark when I shoot on smth put spark on it asat(as simple as that :_)
+
+[33mcommit 34dc6a72a346e1c1d6831200707baade8a3cea51[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Mon Mar 29 12:37:10 2021 +0200
+
+    14. Implement A Muzzle Flash
+    
+    So in this video we put Particles when we shoot(Muzzle Falsh)
+
+[33mcommit 4c7601bcaa64836422e094a3b294f28ce3c8b672[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Mon Mar 22 15:52:07 2021 +0200
+
+    13. Enemy Health & Damage
+    
+    making health system....
+
+[33mcommit b94175cb192f7ab0fec0cb69a35ac0bc3b2fbbb1[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Mon Mar 22 15:06:29 2021 +0200
+
+    12. Introduction To Raycasting + very tiny thing for fun!
+    
+    So this video basically was talking abt Raycasting so its just smth realted to physics can make shooting thing or whatever just put the starting point and where it will goes  or in what direction..., put a variable have the end point to save it to use it other time w the keyword out....... and finally range
+    
+    --> And Also I add two things or two different things....first one is dont print if u hit anything out of the game plane at least like the sky dosent count....And after that I made smth dont make a hit or shoot if the things u shoot on is not Enemy
+
+[33mcommit a8abbe1698b14251c9f7d4c22c0bfc3e8c9732ff[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Mon Mar 22 13:38:05 2021 +0200
+
+    11. Give That Player A Gun
+    
+    Give The player a gun w reticle
+
+[33mcommit 18da4fcd233a82d5b6e79fba3ab61650bb0e7fed[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Sat Mar 20 14:49:45 2021 +0200
+
+    10. Enemy AI - Attack If Provoked
+    
+    making some good structure shit
+
+[33mcommit e85f82457ede86fee4fec1979ebebe8b7cc9eea3[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Thu Mar 18 16:46:04 2021 +0200
+
+    9. Using OnDrawGizmosSelected()
+    
+    so we just knew a code can make a wire or smth like that in specific range which is awesome and helping...
+
+[33mcommit 2419c0410ae0486fa945ed419ea1db044c752150[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Thu Mar 18 16:07:13 2021 +0200
+
+    7. Enemy AI - Chase Range + Adding text
+    
+    So I wanted to make an idea just for fun cuz I dont feel that exciting or interesting so I thought to use an image w text
+    the condition: I have to be in the range and then out then text appear
+
+[33mcommit 813db5a4a1df78dd13f932bb8d3725efc2b5b651[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Thu Mar 18 15:16:05 2021 +0200
+
+    7. Enemy AI - Chase Range
+    
+    we made chase range if the distance less than it then go get him
+
+[33mcommit e23072ae0f3dda9cc9bf5fcffaeed38c599e20e1[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Thu Mar 11 14:55:51 2021 +0200
+
+    6. Getting Stuck & Jittering
+    
+    Fixing smth things....the slippering and the bobbing of the camera
+
+[33mcommit 3936e8565e4e02dffca5171e212a6dbe45f3dfd3[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Thu Mar 11 14:37:12 2021 +0200
+
+    5. Using NavMeshAgent For AI
+    
+    make the enemy nav to us!!
+
+[33mcommit d23c71f6afb5cc3188f7ad8539257ea237911d53[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Thu Mar 11 13:35:26 2021 +0200
+
+    4. Make A Prototyping Sandbox
+    
+    So I just made a Simple Design for Sandbox from the  things in the Standard Assets from unity
+    the idea is just seeing the mechanics that I got from also the standard assets
+
+[33mcommit 2ebb02a777d1616e0346b6d9345a4fe92368aa6d[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Wed Mar 10 19:00:43 2021 +0200
+
+    3. Adding first-person controller + notes
+    
+    ok so we added and make notes more organized + we got the first person controller from Assets store and it's awesome
+
+[33mcommit af2dad0ae4e75cf33518719b6dd89fd8022fe7ec[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Wed Mar 10 18:21:34 2021 +0200
+
+    Added Notes...Lots of notes actually
+
+[33mcommit ff5e243f1e6900aef6e670e558265c04c731067a[m
+Author: AbdallahEssamGaber <abdallahgaber441@gmail.com>
+Date:   Wed Mar 10 16:41:11 2021 +0200
+
+    Initial commit

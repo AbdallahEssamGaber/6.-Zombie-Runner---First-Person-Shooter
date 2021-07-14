@@ -16,28 +16,33 @@ public class WeaponZoom : MonoBehaviour
     [SerializeField] float zommed_in = 10, zommed_out = 10;
     [SerializeField] float zommed_in_sen = 0.5f, zommed_out_sen = 2f;
 
+    public bool isZoomed = false;
 
-
-    void OnDisable()
-    {
-        ZoomOut();
-    }
+ 
 
     void Update()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1))
         {
             ZoomOn();
         }
-        else
+        else if (Input.GetMouseButtonUp(1))
         {
             ZoomOut();
+        }
+
+
+        if(!GetComponent<Weapon>().isAvailable && GetComponent<Weapon>().isTaken)
+        {
+            ZoomOut();
+            this.enabled = false;
         }
 
     }
 
     void ZoomOn()
     {
+        isZoomed = true;
         StartCoroutine(ScoopOverlay());
         animator.SetBool("scooped", true);
         weaponCamera.SetActive(false);
@@ -47,8 +52,9 @@ public class WeaponZoom : MonoBehaviour
         fpsController.sensitivityY = zommed_in_sen;
     }
 
-    void ZoomOut()
+    public void ZoomOut()
     {
+        isZoomed = false;
         scoopOverlay.SetActive(false);
         reticle.SetActive(true);
         animator.SetBool("scooped", false);
@@ -61,10 +67,14 @@ public class WeaponZoom : MonoBehaviour
 
     IEnumerator ScoopOverlay()
     {
-        yield return new WaitForSeconds(0.15f);
+        while (isZoomed)
+        {
+            scoopOverlay.SetActive(true);
+            reticle.SetActive(false);
+            yield return null;
+        }
+        
   
-        scoopOverlay.SetActive(true);
-        reticle.SetActive(false);
 
 
     }

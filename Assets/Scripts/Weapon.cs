@@ -15,26 +15,37 @@ public class Weapon : MonoBehaviour
     [SerializeField] GameObject hitEffectRest;
     [SerializeField] GameObject hitEffectEnemy;
     [SerializeField] Ammo ammoSlot;
-    [SerializeField] AmmoType ammoType;
+    [SerializeField] public AmmoType ammoType;
     [SerializeField] float timeBetweenShots = 0.5f;
     [SerializeField] TextMeshProUGUI ammoText;
     [SerializeField] Animator aim;
     [SerializeField] Animator gunAnimator;
+    [SerializeField] public bool isTaken = false;
+    [SerializeField] public GameObject reticle;
+
+    public bool canShoot = false;
+    public bool isAvailable = false;
 
 
-    bool canShoot = true;
-    bool where;
-  
-
-
-
-    private void OnEnable()
+    private void Start()
     {
-        canShoot = true;
+        ammoText.text = "";
+        reticle.SetActive(false);
     }
+
+  
 
     void Update()
     {
+
+        if (isAvailable)
+        {
+            ammoText.text = ammoSlot.GetCurrentAmmo(ammoType).ToString();
+        }
+        else
+        {
+            return;
+        }
 
         if (ammoType == AmmoType.Pistol)
         {
@@ -43,14 +54,11 @@ public class Weapon : MonoBehaviour
                 gameObject.GetComponentInChildren<SimpleShoot>().enabled = false;
                 canShoot = false;
             }
-            if (aim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
-            {  //If normalizedTime is 0 to 1 means animation is playing, if greater than 1 means finished
-            }
-            else
+            if (aim.GetCurrentAnimatorStateInfo(0).IsName("Fire"))
             {
                 gunAnimator.ResetTrigger("Fire");
-
             }
+           
         } else if (ammoType != AmmoType.Pistol)
         {
             if (ammoSlot.GetCurrentAmmo(ammoType) <= 0)
@@ -59,31 +67,30 @@ public class Weapon : MonoBehaviour
             }
         }
 
-        DisplayAmmo();
-
-        if (Input.GetMouseButtonDown(0) && canShoot == true)
+        if (ammoSlot.GetCurrentAmmo(ammoType) <= 0)
         {
+            canShoot = false;
+        }
+
+        if (Input.GetMouseButtonDown(0) && canShoot == true && aim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        {
+            
             StartCoroutine(Shoot());
         }
-    }
 
-    void DisplayAmmo()
-    {
-        int currentAmmo = ammoSlot.GetCurrentAmmo(ammoType);
-        ammoText.text = currentAmmo.ToString();
+
 
     }
+
+   
     IEnumerator Shoot()
     {
         canShoot = false;
-        if (ammoType != AmmoType.Pistol)
-        {
+       
             if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
             {
                 PlayMuzzleFlash();
             }
-            
-        }
 
         ProcessRaycast();
         ammoSlot.ReduceCurrentAmmo(ammoType);
