@@ -22,18 +22,24 @@ public class Weapon : MonoBehaviour
     [SerializeField] Animator gunAnimator;
     [SerializeField] public bool isTaken = false;
     [SerializeField] public GameObject reticle;
+    [SerializeField] public float maxUnStab;
+    [SerializeField] public float incUnStab;
 
     public bool canShoot = false;
     public bool isAvailable = false;
-
+    ShootPos shootPos;
+    Stability stability;
 
     private void Start()
     {
         ammoText.text = "";
         reticle.SetActive(false);
+
+        shootPos = FindObjectOfType<ShootPos>();
+        stability = FindObjectOfType<Stability>();
     }
 
-  
+
 
     void Update()
     {
@@ -86,11 +92,13 @@ public class Weapon : MonoBehaviour
     IEnumerator Shoot()
     {
         canShoot = false;
-       
-            if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
-            {
+        GetComponent<ShakeTrigger>().Stomp();
+
+        if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
+        {
+    
                 PlayMuzzleFlash();
-            }
+        }
 
         ProcessRaycast();
         ammoSlot.ReduceCurrentAmmo(ammoType);
@@ -115,7 +123,8 @@ public class Weapon : MonoBehaviour
     {
         
         RaycastHit hit;
-        if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
+        Ray ray = new Ray(shootPos.transform.position, shootPos.transform.forward);
+        if (Physics.Raycast(ray, out hit, range))
         {
 
             if (hit.transform.tag == "head" || hit.transform.tag == "enemy")
@@ -132,7 +141,8 @@ public class Weapon : MonoBehaviour
             
         }
         RaycastHit ss;
-        if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out ss))
+        Ray ray2 = new Ray(shootPos.transform.position, shootPos.transform.forward);
+        if (Physics.Raycast(ray2, out ss))
         {
             hitterDamage targetB = ss.transform.GetComponent<hitterDamage>();
             if (targetB == null) return;

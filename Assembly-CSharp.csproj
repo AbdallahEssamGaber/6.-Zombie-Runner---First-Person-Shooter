@@ -163,6 +163,7 @@
     <Compile Include="Assets\Asset Packs\Standard Assets\2D\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Asset Packs\Standard Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
     <Compile Include="Assets\Asset Packs\Standard Assets\Vehicles\Car\Scripts\CarUserControl.cs" />
+    <Compile Include="Assets\Scripts\TakenWeapons.cs" />
     <Compile Include="Assets\Asset Packs\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
     <Compile Include="Assets\Asset Packs\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
     <Compile Include="Assets\Asset Packs\Standard Assets\Utility\EventSystemChecker.cs" />
@@ -182,7 +183,23 @@
     <Compile Include="Assets\Asset Packs\Standard Assets\ParticleSystems\Scripts\Hose.cs" />
     <Compile Include="Assets\Asset Packs\Standard Assets\2D\Scripts\PlatformerCharacter2D.cs" />
     <Compile Include="Assets\Asset Packs\Standard Assets\Utility\FPSCounter.cs" />
-    <Compile Include="Assets\Scripts\TakenWeapons.cs" />
+    <Compile Include="Assets\Scripts\ShootPos.cs" />
+    <Compile Include="Assets\Scripts\Stability.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Runtime\Power.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Runtime\PerlinShake.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Runtime\ICameraShake.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Runtime\CameraShakePresets.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Runtime\Displacement.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Runtime\Envelope.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Runtime\KickShake.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Samples\Explosion\Scripts\ExplosionTrigger.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Runtime\Attenuator.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Runtime\BounceShake.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Runtime\CameraShaker.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Samples\Stompa\Scripts\ShakeTrigger.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Samples\Stompa\Scripts\Movement.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Samples\Explosion\Scripts\Explosion.cs" />
+    <Compile Include="Assets\Asset Packs\GG Camera Shake\Samples\Explosion\Scripts\BoxesSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset Packs\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />

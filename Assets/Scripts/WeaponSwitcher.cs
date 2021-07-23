@@ -145,8 +145,14 @@ public class WeaponSwitcher : MonoBehaviour
 
         weapon.GetComponentInChildren<Weapon>().canShoot = false;
         weapon.GetComponentInChildren<Weapon>().isAvailable = false;
+        if (weapon.GetComponentInChildren<Weapon>().ammoType == AmmoType.Sniper)
+        {
+            WeaponZoom wZ = weapon.GetComponentInChildren<WeaponZoom>();
+            if (wZ == null) return;
+            wZ.ZoomOut();
+            wZ.enabled = false;
+        }
 
-    
         if (weapon.GetComponentInChildren<Weapon>().ammoType == AmmoType.Pistol)
         {
             weapon.GetComponentInChildren<SimpleShoot>().enabled = false;
