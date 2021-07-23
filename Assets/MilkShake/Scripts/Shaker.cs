@@ -118,6 +118,11 @@ namespace MilkShake
 
         private void LateUpdate()
         {
+            ShakeTrigger[] sH = FindObjectsOfType<ShakeTrigger>();
+            foreach (ShakeTrigger shakeTrigger in sH)
+            {
+                if (shakeTrigger.isShaked == false) return;
+            }
             ShakeResult shake = new ShakeResult();
 
             for (int i = 0; i < activeShakes.Count; i++)
@@ -131,7 +136,6 @@ namespace MilkShake
 
                 shake += activeShakes[i].UpdateShake(Time.deltaTime);
             }
-
             transform.localPosition = shake.PositionShake;
             transform.localEulerAngles = shake.RotationShake;
         }
