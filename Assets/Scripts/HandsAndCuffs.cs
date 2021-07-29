@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class HandsAndCuffs : MonoBehaviour
 {
+
+    [SerializeField] int hitsToDestroy = 3;
+    public bool canPickUpWeapons = false;
+
     bool on = false;
+
+    int counter = 0;
+
 
     void OnTriggerEnter(Collider other)
     {
-        
-        if (other.gameObject.tag == "Hands")
+
+        if (other.gameObject.tag == "Pole")
         {
             on = true;
         }
@@ -17,7 +24,7 @@ public class HandsAndCuffs : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Hands")
+        if (other.gameObject.tag == "Pole")
         {
             on = false;
         }
@@ -26,12 +33,21 @@ public class HandsAndCuffs : MonoBehaviour
 
     void Update()
     {
+
+        if(counter == hitsToDestroy)
+        {
+          print("sdfsdfsdf");
+          canPickUpWeapons = true;
+          return;
+        }
+
         if (on)
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetMouseButtonDown(0))
             {
                 //do stuff
                 print("walaasdfsdfsa");
+                counter++;
             }
         }
     }

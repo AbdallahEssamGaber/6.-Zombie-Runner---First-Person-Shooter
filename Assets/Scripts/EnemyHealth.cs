@@ -9,6 +9,12 @@ public class EnemyHealth : MonoBehaviour
 
     bool isDead = false;
 
+
+    void Start()
+    {
+
+    }
+
     public bool IsDead()
     {
         return isDead;

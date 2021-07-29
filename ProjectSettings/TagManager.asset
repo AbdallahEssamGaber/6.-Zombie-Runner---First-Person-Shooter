@@ -13,6 +13,8 @@ TagManager:
   - Carbine
   - Reticle
   - Hands
+  - Cuffs
+  - Pole
   layers:
   - Default
   - TransparentFX

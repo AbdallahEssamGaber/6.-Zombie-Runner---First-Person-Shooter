@@ -11,12 +11,18 @@ public class TakenWeapons : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        if(!FindObjectOfType<HandsAndCuffs>().canPickUpWeapons) {
+            print("ACTIVEZS");
+            return;
+          }
+
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
         foreach (var hitCollider in hitColliders)
         {
             switch (hitCollider.tag)
             {
-                case "Pistol":      //todo put the same tags
+                case "Pistol":
                     weaponFound += 1;
                     weapons = GetComponentsInChildren<Weapon>();
                     foreach (Weapon weapon in weapons)
@@ -41,7 +47,7 @@ public class TakenWeapons : MonoBehaviour
                         }
                     }
                     break;
-                case "Shotgun":  //todo put the same tags
+                case "Shotgun":
 
                     weaponFound += 1;
                     weapons = GetComponentsInChildren<Weapon>();
@@ -68,7 +74,7 @@ public class TakenWeapons : MonoBehaviour
                         }
                     }
                     break;
-                case "Carbine":  //todo put the same tags
+                case "Carbine":
 
                     weaponFound += 1;
                     weapons = GetComponentsInChildren<Weapon>();
