@@ -12,6 +12,7 @@ TagManager:
   - Shotgun
   - Carbine
   - Reticle
+  - Hands
   layers:
   - Default
   - TransparentFX
