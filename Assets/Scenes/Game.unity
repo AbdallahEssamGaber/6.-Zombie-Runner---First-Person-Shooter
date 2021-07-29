@@ -97666,7 +97666,8 @@ PrefabInstance:
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 1517903126}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4058118545975317701, guid: 8235d80f1caff234a98c26531881ebe7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8235d80f1caff234a98c26531881ebe7, type: 3}
 --- !u!4 &8180814097808735624 stripped
 Transform:
