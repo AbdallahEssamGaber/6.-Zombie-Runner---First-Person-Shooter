@@ -11,10 +11,14 @@ public class HandsAndCuffs : MonoBehaviour
     [SerializeField] float EnzelMaraWheda = 0.5f;
     [SerializeField] float backNormalSpeed = 10f;
     [SerializeField] float rotateSpeed = 2f;
+    [SerializeField] float radius = 0.9f;
+    [SerializeField] Transform cuffsEmptyObj;
 
     public bool canPickUpWeapons = false;
 
     bool on = false;
+    bool count = false;
+    bool onCollider = false;
 
     int counter = 0;
 
@@ -27,12 +31,17 @@ public class HandsAndCuffs : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         animator.runtimeAnimatorController = animatorOverrideControllers[0];
     }
+
     void OnTriggerEnter(Collider other)
     {
 
         if (other.gameObject.tag == "Pole")
         {
             on = true;
+        }
+        if (other.gameObject.tag == "onPole")
+        {
+            onCollider = true;
         }
     }
 
@@ -41,7 +50,13 @@ public class HandsAndCuffs : MonoBehaviour
         if (other.gameObject.tag == "Pole")
         {
             on = false;
+        } 
+        if (other.gameObject.tag == "onPole")
+        {
+            onCollider = false;
+            count = false;
         }
+       
     }
 
 
@@ -49,28 +64,35 @@ public class HandsAndCuffs : MonoBehaviour
     {
         eulerAngels = transform.localRotation.eulerAngles;
 
-       
+        Collider[] hitColliders = Physics.OverlapSphere(cuffsEmptyObj.position, radius);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.gameObject.tag == "onPole") count = true;
+
+        }
         if (!on && counter < hitsToDestroy)
         {
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Right TB_004") || (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Break Right")))
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Right TB_004") || (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Break Right")))
 
-            {
-                animator.runtimeAnimatorController = animatorOverrideControllers[0];
+                {
+                    animator.runtimeAnimatorController = animatorOverrideControllers[0];
 
-            }
+                }
 
         }
 
-
-
+       
         if (counter >= hitsToDestroy)
         {
+            print("sdfsd");
             canPickUpWeapons = true;
-            if (counter == hitsToDestroy) animator.runtimeAnimatorController = animatorOverrideControllers[2];
+           
 
 
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1) //> 1 means Finished
             {
+                print("destroyed");
+
                 meshRenderers = GetComponentsInChildren<Renderer>();
                 foreach (Renderer meshRenderer in meshRenderers)
                 {
@@ -80,14 +102,13 @@ public class HandsAndCuffs : MonoBehaviour
                 enabled = false;
 
             }
+            return;
 
-      
+
         }
 
 
-
-
-        if (on)
+        if (on && counter <= hitsToDestroy)
         {
             animator.runtimeAnimatorController = animatorOverrideControllers[1];
 
@@ -95,12 +116,11 @@ public class HandsAndCuffs : MonoBehaviour
             {
                 if (counter != hitsToDestroy)
                 {
-                
+
                     StartCoroutine(TBRotatin());
 
                 }
 
-                counter++;
 
             }
 
@@ -110,16 +130,15 @@ public class HandsAndCuffs : MonoBehaviour
 
         }
 
-        //if (test)
-        //{
-        //    StartCoroutine(TBRotatin());
-        //    test = false;
-        //}
+
+
+        
         print(counter);
-       //print(transform.localRotation.eulerAngles.x);
-       
+
 
     }
+
+   
 
     IEnumerator TBRotatin()
     {
@@ -129,35 +148,44 @@ public class HandsAndCuffs : MonoBehaviour
 
             if (eulerAngels.x < eulerX && eulerAngels.x > 0)
             {
-
+                
                 StopAllCoroutines();
                 StartCoroutine(TBDefultRotation());
             }
             yield return new WaitForFixedUpdate();
         }
-       
-    } 
+
+    }
     IEnumerator TBDefultRotation()
     {
         yield return new WaitForSeconds(EnzelMaraWheda);
         while (true)
         {
-           
+
             transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * backNormalSpeed);
 
             if (eulerAngels.x > 359 && eulerAngels.x > 0)
             {
-               
+                if(count && onCollider) counter++;
+                if (counter == hitsToDestroy)
+                {
+                    animator.runtimeAnimatorController = animatorOverrideControllers[2];
+                }
                 StopAllCoroutines();
-                
+
             }
             yield return new WaitForFixedUpdate();
         }
-     
+
 
     }
 
-
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(cuffsEmptyObj.position, radius);
+      
+    }
 
 }
   

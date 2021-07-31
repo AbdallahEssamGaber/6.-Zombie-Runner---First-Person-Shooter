@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.394
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.011643356, g: 0.01788178, b: 0.034306142, a: 0.394}
+  m_IndirectSpecularColor: {r: 0.011643369, g: 0.017881796, b: 0.034306187, a: 0.394}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13980,6 +13980,13 @@ MonoBehaviour:
   - {fileID: 22100000, guid: af5045d7adf0aa549a956d9bd0617c2d, type: 2}
   - {fileID: 22100000, guid: 10be5529d41b7c041a35e1542207524b, type: 2}
   - {fileID: 22100000, guid: f99c79dc7e788d840a97682fa2d63a89, type: 2}
+  xTarget: -21
+  eulerX: 340
+  EnzelMaraWheda: 0.5
+  backNormalSpeed: 10
+  rotateSpeed: 2
+  radius: 0.08
+  cuffsEmptyObj: {fileID: 2029109628}
   canPickUpWeapons: 0
 --- !u!135 &279360746
 SphereCollider:
@@ -41256,26 +41263,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6671207679810249600, guid: a86f6e00b7c7fc04d80115f3d9df1ecc, type: 3}
---- !u!1 &895791480 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9149340410075254824, guid: 42cc57f65158b89448b218d991d1a260,
-    type: 3}
-  m_PrefabInstance: {fileID: 8386305580278936423}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &895791483
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 895791480}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!4 &896780078 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 90dced4ca0c61bf46b0b8d592d087036,
@@ -42225,25 +42212,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 920315391}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &920871750 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 569186082316175460, guid: a42bc953b16e3f246a50d3813bb8499b,
-    type: 3}
-  m_PrefabInstance: {fileID: 569186081349084495}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &920871752
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920871750}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 13.2, y: 30, z: 30}
-  m_Center: {x: 42.7, y: 24.9, z: -42.32}
 --- !u!1 &920967096
 GameObject:
   m_ObjectHideFlags: 0
@@ -69170,26 +69138,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2550504713839041973, guid: a86f6e00b7c7fc04d80115f3d9df1ecc, type: 3}
---- !u!1 &1550314120 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4764563624047331805, guid: 42cc57f65158b89448b218d991d1a260,
-    type: 3}
-  m_PrefabInstance: {fileID: 8386305580278936423}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1550314123
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1550314120}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1001 &1550454328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92844,6 +92792,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2028866802}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2029109628 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2029109628, guid: 42cc57f65158b89448b218d991d1a260,
+    type: 3}
+  m_PrefabInstance: {fileID: 8386305580278936423}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2030326899 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7205986587346017713, guid: 443d2aeb3c1e9a0488bdf520d1c2ec90,
@@ -97753,11 +97707,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 49031739}
     m_Modifications:
-    - target: {fileID: 569186081121194989, guid: a42bc953b16e3f246a50d3813bb8499b,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 569186082316175459, guid: a42bc953b16e3f246a50d3813bb8499b,
         type: 3}
       propertyPath: m_RootOrder
@@ -97817,11 +97766,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Light pole
-      objectReference: {fileID: 0}
-    - target: {fileID: 569186082316175460, guid: a42bc953b16e3f246a50d3813bb8499b,
-        type: 3}
-      propertyPath: m_TagString
-      value: Pole
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a42bc953b16e3f246a50d3813bb8499b, type: 3}
@@ -98063,17 +98007,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 279360744}
     m_Modifications:
-    - target: {fileID: 5243869066584543472, guid: 42cc57f65158b89448b218d991d1a260,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172372606793884226, guid: 42cc57f65158b89448b218d991d1a260,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: 10be5529d41b7c041a35e1542207524b,
-        type: 2}
     - target: {fileID: 8172372606793884227, guid: 42cc57f65158b89448b218d991d1a260,
         type: 3}
       propertyPath: m_Name

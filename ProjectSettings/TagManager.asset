@@ -15,6 +15,7 @@ TagManager:
   - Hands
   - Cuffs
   - Pole
+  - onPole
   layers:
   - Default
   - TransparentFX
