@@ -6,7 +6,11 @@ public class HandsAndCuffs : MonoBehaviour
 {
     [SerializeField] int hitsToDestroy = 3;
     [SerializeField] AnimatorOverrideController[] animatorOverrideControllers;
-    //[SerializeField] float ;
+    [SerializeField] float xTarget = -21f;
+    [SerializeField] float eulerX = 340f;
+    [SerializeField] float EnzelMaraWheda = 0.5f;
+    [SerializeField] float backNormalSpeed = 10f;
+    [SerializeField] float rotateSpeed = 2f;
 
     public bool canPickUpWeapons = false;
 
@@ -15,12 +19,9 @@ public class HandsAndCuffs : MonoBehaviour
     int counter = 0;
 
     Animator animator;
-    SkinnedMeshRenderer[] skinnedMeshRenderers;
     Renderer[] meshRenderers;
     Vector3 eulerAngels;
 
-    bool test = true;
-    bool qotorotwoto = true;
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
@@ -46,8 +47,9 @@ public class HandsAndCuffs : MonoBehaviour
 
     void Update()
     {
+        eulerAngels = transform.localRotation.eulerAngles;
 
-
+       
         if (!on && counter < hitsToDestroy)
         {
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Right TB_004") || (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Break Right")))
@@ -87,17 +89,19 @@ public class HandsAndCuffs : MonoBehaviour
 
         if (on)
         {
-            if (Input.GetMouseButton(0))
+            animator.runtimeAnimatorController = animatorOverrideControllers[1];
+
+            if (Input.GetMouseButtonDown(0))
             {
                 if (counter != hitsToDestroy)
                 {
-                    //test = true;
-                    eulerAngels = transform.localRotation.eulerAngles;
+                
                     StartCoroutine(TBRotatin());
-                    animator.runtimeAnimatorController = animatorOverrideControllers[1];
+
                 }
 
-                
+                counter++;
+
             }
 
 
@@ -106,47 +110,46 @@ public class HandsAndCuffs : MonoBehaviour
 
         }
 
-
-       print(counter);
+        //if (test)
+        //{
+        //    StartCoroutine(TBRotatin());
+        //    test = false;
+        //}
+        print(counter);
        //print(transform.localRotation.eulerAngles.x);
-        
+       
 
     }
 
     IEnumerator TBRotatin()
     {
-        while (test)
+        while (true)
         {
-            print("ONNNN");
+            transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(xTarget, 0, 0), Time.deltaTime * rotateSpeed);
 
-            transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(-21, 0, 0), Time.deltaTime / 3);
-
-            if (eulerAngels.x > 337)
+            if (eulerAngels.x < eulerX && eulerAngels.x > 0)
             {
-                StopCoroutine(TBRotatin());
-                qotorotwoto = true;
+
+                StopAllCoroutines();
                 StartCoroutine(TBDefultRotation());
             }
             yield return new WaitForFixedUpdate();
         }
-
+       
     } 
     IEnumerator TBDefultRotation()
     {
-
-        while (qotorotwoto)
+        yield return new WaitForSeconds(EnzelMaraWheda);
+        while (true)
         {
-            yield return new WaitForSeconds(1);
-            test = false;
+           
+            transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * backNormalSpeed);
 
-            transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0, 0, 0), Time.deltaTime / 9);
-
-            if (eulerAngels.x > 356 && eulerAngels.x > 0)
+            if (eulerAngels.x > 359 && eulerAngels.x > 0)
             {
-                StopCoroutine(TBDefultRotation());
-                counter++;
-                qotorotwoto = false;
-
+               
+                StopAllCoroutines();
+                
             }
             yield return new WaitForFixedUpdate();
         }

@@ -13,7 +13,6 @@ public class TakenWeapons : MonoBehaviour
     {
 
         if(!FindObjectOfType<HandsAndCuffs>().canPickUpWeapons) {
-            print("ACTIVEZS");
             return;
           }
 
