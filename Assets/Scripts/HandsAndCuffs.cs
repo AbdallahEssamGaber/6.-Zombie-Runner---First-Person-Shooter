@@ -6,9 +6,11 @@ public class HandsAndCuffs : MonoBehaviour
 {
     [SerializeField] int hitsToDestroy = 3;
     [SerializeField] AnimatorOverrideController[] animatorOverrideControllers;
-    [SerializeField] float xTarget = -21f;
     [SerializeField] bool printEuler = false;
+    [SerializeField] float xTarget = -21f;
     [SerializeField] float eulerX = 340f;
+    [SerializeField] float xNormal = 0;
+    [SerializeField] float eulerXNorm = 359f;
     [SerializeField] float EnzelMaraWheda = 0.5f;
     [SerializeField] float backNormalSpeed = 10f;
     [SerializeField] float rotateSpeed = 2f;
@@ -52,20 +54,20 @@ public class HandsAndCuffs : MonoBehaviour
         if (other.gameObject.tag == "Pole")
         {
             on = false;
-        } 
+        }
         if (other.gameObject.tag == "onPole")
         {
             onCollider = false;
             count = false;
         }
-       
+
     }
 
 
     void Update()
     {
         eulerAngels = transform.localRotation.eulerAngles;
-        if(printEuler) print(transform.localRotation.eulerAngles.x);
+        if (printEuler) print(transform.localRotation.eulerAngles.x);
 
         Collider[] hitColliders = Physics.OverlapSphere(cuffsEmptyObj.position, radius);
         foreach (var hitCollider in hitColliders)
@@ -75,21 +77,21 @@ public class HandsAndCuffs : MonoBehaviour
         }
         if (!on && counter < hitsToDestroy)
         {
-                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Right TB_004") || (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Break Right")))
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Right TB_004") || (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Break Right")))
 
-                {
-                    animator.runtimeAnimatorController = animatorOverrideControllers[0];
+            {
+                animator.runtimeAnimatorController = animatorOverrideControllers[0];
 
-                }
+            }
 
         }
 
-       
+
         if (counter >= hitsToDestroy)
         {
             print("sdfsd");
             canPickUpWeapons = true;
-           
+
 
 
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1) //> 1 means Finished
@@ -147,7 +149,7 @@ public class HandsAndCuffs : MonoBehaviour
 
     }
 
-   
+
 
     IEnumerator TBRotatin()
     {
@@ -171,11 +173,11 @@ public class HandsAndCuffs : MonoBehaviour
         while (true)
         {
 
-            transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * backNormalSpeed);
+            transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(xNormal, 0, 0), Time.deltaTime * backNormalSpeed);
 
-            if (eulerAngels.x > 359 && eulerAngels.x > 0)
+            if (eulerAngels.x > eulerXNorm && eulerAngels.x > 0)
             {
-                if(count && onCollider && finised) counter++;
+                if (count && onCollider && finised) counter++;
                 if (counter == hitsToDestroy)
                 {
                     animator.runtimeAnimatorController = animatorOverrideControllers[2];
@@ -193,8 +195,8 @@ public class HandsAndCuffs : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(cuffsEmptyObj.position, radius);
-      
+
     }
 
 }
-  
+
