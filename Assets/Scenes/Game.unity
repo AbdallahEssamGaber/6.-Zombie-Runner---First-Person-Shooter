@@ -13981,8 +13981,8 @@ MonoBehaviour:
   - {fileID: 22100000, guid: 10be5529d41b7c041a35e1542207524b, type: 2}
   - {fileID: 22100000, guid: f99c79dc7e788d840a97682fa2d63a89, type: 2}
   printEuler: 1
-  xTarget: -50
-  eulerX: 312
+  xTarget: -30
+  eulerX: 332
   xNormal: 0
   eulerXNorm: 359
   EnzelMaraWheda: 0.12
@@ -13990,7 +13990,7 @@ MonoBehaviour:
   rotateSpeed: 4
   radius: 0.08
   cuffsEmptyObj: {fileID: 2029109628}
-  canPickUpWeapons: 0
+  canPickUpWeapons: 1
 --- !u!135 &279360746
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -78842,14 +78842,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676214254}
-  m_LocalRotation: {x: 0.18919761, y: -0, z: -0, w: 0.9819391}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.30070576, y: 0, z: 0, w: 0.953717}
+  m_LocalPosition: {x: 0, y: -0.413, z: -0.118}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 279360744}
   m_Father: {fileID: 1164677559}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 21.812, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -35, y: 0, z: 0}
 --- !u!4 &1677468318 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 90dced4ca0c61bf46b0b8d592d087036,
@@ -97741,6 +97741,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 49031739}
     m_Modifications:
+    - target: {fileID: 1839102761, guid: a42bc953b16e3f246a50d3813bb8499b, type: 3}
+      propertyPath: m_Radius
+      value: 0.008
+      objectReference: {fileID: 0}
     - target: {fileID: 569186082316175459, guid: a42bc953b16e3f246a50d3813bb8499b,
         type: 3}
       propertyPath: m_RootOrder
