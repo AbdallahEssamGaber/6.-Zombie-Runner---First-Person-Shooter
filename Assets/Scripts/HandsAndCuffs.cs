@@ -20,6 +20,7 @@ public class HandsAndCuffs : MonoBehaviour
     bool on = false;
     bool count = false;
     bool onCollider = false;
+    bool finised = false;
 
     int counter = 0;
 
@@ -133,8 +134,14 @@ public class HandsAndCuffs : MonoBehaviour
         }
 
 
+        if (Input.GetMouseButtonUp(0))
+        {
+            StopAllCoroutines();
 
-        
+            StartCoroutine(TBDefultRotation());
+        }
+
+
         print(counter);
 
 
@@ -146,13 +153,13 @@ public class HandsAndCuffs : MonoBehaviour
     {
         while (true)
         {
+            finised = false;
             transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(xTarget, 0, 0), Time.deltaTime * rotateSpeed);
 
             if (eulerAngels.x < eulerX && eulerAngels.x > 0)
             {
-                
+                finised = true;
                 StopAllCoroutines();
-                StartCoroutine(TBDefultRotation());
             }
             yield return new WaitForFixedUpdate();
         }
@@ -168,7 +175,7 @@ public class HandsAndCuffs : MonoBehaviour
 
             if (eulerAngels.x > 359 && eulerAngels.x > 0)
             {
-                if(count && onCollider) counter++;
+                if(count && onCollider && finised) counter++;
                 if (counter == hitsToDestroy)
                 {
                     animator.runtimeAnimatorController = animatorOverrideControllers[2];
