@@ -7,6 +7,7 @@ public class HandsAndCuffs : MonoBehaviour
     [SerializeField] int hitsToDestroy = 3;
     [SerializeField] AnimatorOverrideController[] animatorOverrideControllers;
     [SerializeField] float xTarget = -21f;
+    [SerializeField] bool printEuler = false;
     [SerializeField] float eulerX = 340f;
     [SerializeField] float EnzelMaraWheda = 0.5f;
     [SerializeField] float backNormalSpeed = 10f;
@@ -63,6 +64,7 @@ public class HandsAndCuffs : MonoBehaviour
     void Update()
     {
         eulerAngels = transform.localRotation.eulerAngles;
+        if(printEuler) print(transform.localRotation.eulerAngles.x);
 
         Collider[] hitColliders = Physics.OverlapSphere(cuffsEmptyObj.position, radius);
         foreach (var hitCollider in hitColliders)
