@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hit Impact
+  m_Controller: {fileID: 9100000, guid: 6677231f89ac39d4398fdefc31f535b4, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 2479484066807366926, guid: 23bb0f010118a0d468688647eb423829,
+      type: 3}
+    m_OverrideClip: {fileID: 2479484066807366926, guid: 23bb0f010118a0d468688647eb423829,
+      type: 3}
+  - m_OriginalClip: {fileID: 7773234679050653753, guid: 23bb0f010118a0d468688647eb423829,
+      type: 3}
+    m_OverrideClip: {fileID: 7773234679050653753, guid: 23bb0f010118a0d468688647eb423829,
+      type: 3}
+  - m_OriginalClip: {fileID: -3743504977253436235, guid: 23bb0f010118a0d468688647eb423829,
+      type: 3}
+    m_OverrideClip: {fileID: -3743504977253436235, guid: 23bb0f010118a0d468688647eb423829,
+      type: 3}
+  - m_OriginalClip: {fileID: 628690969083190682, guid: 23bb0f010118a0d468688647eb423829,
+      type: 3}
+    m_OverrideClip: {fileID: 628690969083190682, guid: 23bb0f010118a0d468688647eb423829,
+      type: 3}
