@@ -10,6 +10,7 @@ public class HandsAndCuffs : MonoBehaviour
     [SerializeField] float xTarget = -21f;
     [SerializeField] float eulerX = 340f;
     [SerializeField] float xNormal = 0;
+    [SerializeField] float impactEuler = 330f;
     [SerializeField] float eulerXNorm = 359f;
     [SerializeField] float EnzelMaraWheda = 0.5f;
     [SerializeField] float backNormalSpeed = 10f;
@@ -17,12 +18,14 @@ public class HandsAndCuffs : MonoBehaviour
     [SerializeField] float radius = 0.9f;
     [SerializeField] Transform cuffsEmptyObj;
 
-    public bool canPickUpWeapons = false;
+    [System.NonSerialized]
+    public bool canPickUpWeapons = false; //todo: make it not controlled by editor
 
     bool on = false;
     bool count = false;
     bool onCollider = false;
     bool finised = false;
+    bool enter = true;
 
     int counter = 0;
 
@@ -30,10 +33,18 @@ public class HandsAndCuffs : MonoBehaviour
     Renderer[] meshRenderers;
     Vector3 eulerAngels;
 
+
+
+    int idle = 0;
+    int tB = 1;
+    int tBSS = 2;
+    int impact = 3;
+    int handBreak = 4;
+
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        animator.runtimeAnimatorController = animatorOverrideControllers[0];
+        animator.runtimeAnimatorController = animatorOverrideControllers[idle];
     }
 
     void OnTriggerEnter(Collider other)
@@ -80,7 +91,7 @@ public class HandsAndCuffs : MonoBehaviour
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Right TB_004") || (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Break Right")))
 
             {
-                animator.runtimeAnimatorController = animatorOverrideControllers[0];
+                animator.runtimeAnimatorController = animatorOverrideControllers[idle];
 
             }
 
@@ -115,13 +126,25 @@ public class HandsAndCuffs : MonoBehaviour
 
         if (on && counter <= hitsToDestroy)
         {
-            animator.runtimeAnimatorController = animatorOverrideControllers[1];
+
+
+            if (animator.runtimeAnimatorController == animatorOverrideControllers[impact] && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+            {
+                animator.runtimeAnimatorController = animatorOverrideControllers[tBSS];
+            }
+          
+            else if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && animator.runtimeAnimatorController != animatorOverrideControllers[idle] && animator.runtimeAnimatorController != animatorOverrideControllers[tBSS]) //> 1 means Finished
+            {
+                animator.runtimeAnimatorController = animatorOverrideControllers[tB];
+            }
+            else if (animator.runtimeAnimatorController == animatorOverrideControllers[idle]) animator.runtimeAnimatorController = animatorOverrideControllers[tB];
+           
+
 
             if (Input.GetMouseButtonDown(0))
             {
                 if (counter != hitsToDestroy)
                 {
-
                     StartCoroutine(TBRotatin());
 
                 }
@@ -144,8 +167,7 @@ public class HandsAndCuffs : MonoBehaviour
         }
 
 
-        print(counter);
-
+        print(animator.runtimeAnimatorController);
 
     }
 
@@ -153,14 +175,18 @@ public class HandsAndCuffs : MonoBehaviour
 
     IEnumerator TBRotatin()
     {
+        animator.runtimeAnimatorController = animatorOverrideControllers[tBSS];
+
         while (true)
         {
+
             finised = false;
             transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(xTarget, 0, 0), Time.deltaTime * rotateSpeed);
 
             if (eulerAngels.x < eulerX && eulerAngels.x > 0)
             {
                 finised = true;
+                enter = true;
                 StopAllCoroutines();
             }
             yield return new WaitForFixedUpdate();
@@ -174,13 +200,22 @@ public class HandsAndCuffs : MonoBehaviour
         {
 
             transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(xNormal, 0, 0), Time.deltaTime * backNormalSpeed);
+            if (eulerAngels.x > impactEuler && eulerAngels.x > 0 && enter && count)
+            {
+                animator.runtimeAnimatorController = animatorOverrideControllers[impact];
+                enter = false;
 
+            }
             if (eulerAngels.x > eulerXNorm && eulerAngels.x > 0)
             {
-                if (count && onCollider && finised) counter++;
+
+                if (count && onCollider && finised)
+                {
+                    counter++;
+                }
                 if (counter == hitsToDestroy)
                 {
-                    animator.runtimeAnimatorController = animatorOverrideControllers[2];
+                    animator.runtimeAnimatorController = animatorOverrideControllers[handBreak];
                 }
                 StopAllCoroutines();
 
@@ -199,4 +234,3 @@ public class HandsAndCuffs : MonoBehaviour
     }
 
 }
-

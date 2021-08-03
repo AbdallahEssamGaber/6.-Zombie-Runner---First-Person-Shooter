@@ -49,8 +49,8 @@ MonoBehaviour:
   animatorOverrideControllers:
   - {fileID: 22100000, guid: af5045d7adf0aa549a956d9bd0617c2d, type: 2}
   - {fileID: 22100000, guid: 10be5529d41b7c041a35e1542207524b, type: 2}
-  - {fileID: 22100000, guid: 8787cefd57a954146a3fb58a5e2c6980, type: 2}
-  - {fileID: 22100000, guid: 754bc752e69d23b4cb7e09a750acb977, type: 2}
+  - {fileID: 22100000, guid: f5821de1703c7c44ba4b7daae2f67cd0, type: 2}
+  - {fileID: 22100000, guid: 0c813add54383ed408714f157f584dae, type: 2}
   - {fileID: 22100000, guid: f99c79dc7e788d840a97682fa2d63a89, type: 2}
   printEuler: 0
   xTarget: -30
@@ -63,7 +63,6 @@ MonoBehaviour:
   rotateSpeed: 4
   radius: 0.08
   cuffsEmptyObj: {fileID: 4554438894207995259}
-  canPickUpWeapons: 0
 --- !u!136 &1770753581
 CapsuleCollider:
   m_ObjectHideFlags: 0

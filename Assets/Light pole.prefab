@@ -201,7 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 569186082316175459}
-  - component: {fileID: 920871752}
+  - component: {fileID: 1156572790}
   m_Layer: 0
   m_Name: Light pole
   m_TagString: Pole
@@ -228,8 +228,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &920871752
-BoxCollider:
+--- !u!135 &1156572790
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -239,8 +239,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 13.2, y: 30, z: 30}
-  m_Center: {x: 42.7, y: 24.9, z: -42.32}
+  m_Radius: 16.3
+  m_Center: {x: 41.33, y: 17.6, z: -43.93}
 --- !u!1 &3018048532153844168
 GameObject:
   m_ObjectHideFlags: 0
