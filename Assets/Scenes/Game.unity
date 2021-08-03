@@ -25774,7 +25774,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-23448
+  m_Name: pb_Mesh-10836
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -53092,7 +53092,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-16020
+  m_Name: pb_Mesh-3392
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -64077,7 +64077,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-22358
+  m_Name: pb_Mesh-9730
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -64267,7 +64267,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-22334
+  m_Name: pb_Mesh-9706
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -73326,7 +73326,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-16008
+  m_Name: pb_Mesh-3380
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -80268,7 +80268,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-16032
+  m_Name: pb_Mesh-3404
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -89053,7 +89053,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-22346
+  m_Name: pb_Mesh-9718
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -89997,6 +89997,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 26068d6657593fc42aa38845753432da, type: 3}
+--- !u!1 &1964523469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 569186082316175460, guid: a42bc953b16e3f246a50d3813bb8499b,
+    type: 3}
+  m_PrefabInstance: {fileID: 569186081349084495}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1964523470
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964523469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 5.51
+  m_Height: 125.72
+  m_Direction: 1
+  m_Center: {x: 43.3, y: -9.9, z: -43.3}
 --- !u!1 &1966023564 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5174404485931547056, guid: a86f6e00b7c7fc04d80115f3d9df1ecc,
@@ -97688,7 +97708,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Light pole
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 920871752, guid: a42bc953b16e3f246a50d3813bb8499b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a42bc953b16e3f246a50d3813bb8499b, type: 3}
 --- !u!1001 &705247673715206251
 PrefabInstance:
