@@ -19,7 +19,7 @@ public class HandsAndCuffs : MonoBehaviour
     [SerializeField] Transform cuffsEmptyObj;
 
     [System.NonSerialized]
-    public bool canPickUpWeapons = false; //todo: make it not controlled by editor
+    public bool canPickUpWeapons = false; 
 
     bool on = false;
     bool count = false;
@@ -86,9 +86,13 @@ public class HandsAndCuffs : MonoBehaviour
             if (hitCollider.gameObject.tag == "onPole") count = true;
 
         }
+
+
         if (!on && counter < hitsToDestroy)
         {
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Right TB_004") || (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Break Right")))
+            print("sdfsd");
+
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Right TB_004") || animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Break Right") || animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|TB SS"))
 
             {
                 animator.runtimeAnimatorController = animatorOverrideControllers[idle];
@@ -100,14 +104,12 @@ public class HandsAndCuffs : MonoBehaviour
 
         if (counter >= hitsToDestroy)
         {
-            print("sdfsd");
             canPickUpWeapons = true;
 
 
 
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1) //> 1 means Finished
             {
-                print("destroyed");
 
                 meshRenderers = GetComponentsInChildren<Renderer>();
                 foreach (Renderer meshRenderer in meshRenderers)
@@ -137,8 +139,12 @@ public class HandsAndCuffs : MonoBehaviour
             {
                 animator.runtimeAnimatorController = animatorOverrideControllers[tB];
             }
-            else if (animator.runtimeAnimatorController == animatorOverrideControllers[idle]) animator.runtimeAnimatorController = animatorOverrideControllers[tB];
-           
+            else if (animator.runtimeAnimatorController == animatorOverrideControllers[idle])
+            {
+                animator.runtimeAnimatorController = animatorOverrideControllers[tB];
+
+            }
+
 
 
             if (Input.GetMouseButtonDown(0))

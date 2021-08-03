@@ -97767,25 +97767,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 279360745, guid: 8235d80f1caff234a98c26531881ebe7, type: 3}
-      propertyPath: animatorOverrideControllers.Array.data[2]
-      value: 
-      objectReference: {fileID: 22100000, guid: f5821de1703c7c44ba4b7daae2f67cd0,
-        type: 2}
-    - target: {fileID: 279360745, guid: 8235d80f1caff234a98c26531881ebe7, type: 3}
-      propertyPath: animatorOverrideControllers.Array.data[3]
-      value: 
-      objectReference: {fileID: 22100000, guid: 0c813add54383ed408714f157f584dae,
-        type: 2}
-    - target: {fileID: 1676214255, guid: 8235d80f1caff234a98c26531881ebe7, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5428731414095746838, guid: 8235d80f1caff234a98c26531881ebe7,
-        type: 3}
-      propertyPath: near clip plane
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 5428731414095942966, guid: 8235d80f1caff234a98c26531881ebe7,
         type: 3}
       propertyPath: m_Name
@@ -97851,21 +97832,6 @@ PrefabInstance:
       propertyPath: impactCanves
       value: 
       objectReference: {fileID: 211886701}
-    - target: {fileID: 5428731414584946573, guid: 8235d80f1caff234a98c26531881ebe7,
-        type: 3}
-      propertyPath: ammoSlots.Array.data[0].ammoAmount
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5428731414584946573, guid: 8235d80f1caff234a98c26531881ebe7,
-        type: 3}
-      propertyPath: ammoSlots.Array.data[1].ammoAmount
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5428731414584946573, guid: 8235d80f1caff234a98c26531881ebe7,
-        type: 3}
-      propertyPath: ammoSlots.Array.data[2].ammoAmount
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 5428731414584946574, guid: 8235d80f1caff234a98c26531881ebe7,
         type: 3}
       propertyPath: gameOverCanvas
@@ -97916,8 +97882,7 @@ PrefabInstance:
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 1517903126}
-    m_RemovedComponents:
-    - {fileID: 4058118545975317701, guid: 8235d80f1caff234a98c26531881ebe7, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8235d80f1caff234a98c26531881ebe7, type: 3}
 --- !u!4 &8180814097808735624 stripped
 Transform:
