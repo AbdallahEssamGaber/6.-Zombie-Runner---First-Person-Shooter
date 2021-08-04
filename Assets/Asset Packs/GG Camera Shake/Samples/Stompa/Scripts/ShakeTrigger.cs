@@ -31,6 +31,15 @@ public class ShakeTrigger : MonoBehaviour
         Invoke(nameof(Activate), shakeTime);
         StartCoroutine(stability.messUp(weapon.maxUnStab, weapon.incUnStab));
     }
+    public void HandStomp()
+    {
+        isShaked = false;
+        Vector3 sourcePosition = transform.position;
+
+        // Creating new instance of a shake and registering it in the system.
+        CameraShaker.Shake(new BounceShake(shakeParams, sourcePosition));
+        Invoke(nameof(Activate), shakeTime);
+    }
     private void Activate()
     {
         isShaked = true;

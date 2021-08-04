@@ -19,13 +19,13 @@ public class HandsAndCuffs : MonoBehaviour
     [SerializeField] Transform cuffsEmptyObj;
 
     [System.NonSerialized]
-    public bool canPickUpWeapons = false; 
+    public bool canPickUpWeapons = false;
 
     bool on = false;
     bool count = false;
     bool onCollider = false;
     bool finised = false;
-    bool enter = true;
+    bool enter = false;
 
     int counter = 0;
 
@@ -102,11 +102,11 @@ public class HandsAndCuffs : MonoBehaviour
                 print("sdfsd");
 
                 animator.runtimeAnimatorController = animatorOverrideControllers[tBRev];
-                if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1) animator.runtimeAnimatorController = animatorOverrideControllers[idle];
+                if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1) animator.runtimeAnimatorController = animatorOverrideControllers[idle];
 
             }
 
-         
+
 
         }
 
@@ -143,7 +143,7 @@ public class HandsAndCuffs : MonoBehaviour
             {
                 animator.runtimeAnimatorController = animatorOverrideControllers[tBSS];
             }
-          
+
             else if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && animator.runtimeAnimatorController != animatorOverrideControllers[idle] && animator.runtimeAnimatorController != animatorOverrideControllers[tBSS]) //> 1 means Finished
             {
                 animator.runtimeAnimatorController = animatorOverrideControllers[tB];
@@ -191,11 +191,11 @@ public class HandsAndCuffs : MonoBehaviour
     IEnumerator TBRotatin()
     {
         animator.runtimeAnimatorController = animatorOverrideControllers[tBSS];
+        finised = false;
 
         while (true)
         {
 
-            finised = false;
             transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(xTarget, 0, 0), Time.deltaTime * rotateSpeed);
 
             if (eulerAngels.x < eulerX && eulerAngels.x > 0)
@@ -226,6 +226,7 @@ public class HandsAndCuffs : MonoBehaviour
 
                 if (count && onCollider && finised)
                 {
+                    GetComponent<ShakeTrigger>().HandStomp();
                     counter++;
                 }
                 if (counter == hitsToDestroy)
