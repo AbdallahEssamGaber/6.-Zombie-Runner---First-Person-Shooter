@@ -91,16 +91,22 @@ public class HandsAndCuffs : MonoBehaviour
 
         if (!on && counter < hitsToDestroy)
         {
-            print("sdfsd");
-
+            if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && animator.runtimeAnimatorController == animatorOverrideControllers[tBRev])
+            {
+                animator.runtimeAnimatorController = animatorOverrideControllers[idle];
+                return;
+            }
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Right TB_004") || animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Break Right") || animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|TB SS") || animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Hit impact right"))
 
             {
-                
+                print("sdfsd");
+
                 animator.runtimeAnimatorController = animatorOverrideControllers[tBRev];
                 if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1) animator.runtimeAnimatorController = animatorOverrideControllers[idle];
 
             }
+
+         
 
         }
 
