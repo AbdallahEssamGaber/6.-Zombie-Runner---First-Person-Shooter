@@ -36,10 +36,11 @@ public class HandsAndCuffs : MonoBehaviour
 
 
     int idle = 0;
-    int tB = 1;
-    int tBSS = 2;
-    int impact = 3;
-    int handBreak = 4;
+    int tBRev = 1;
+    int tB = 2;
+    int tBSS = 3;
+    int impact = 4;
+    int handBreak = 5;
 
     void Start()
     {
@@ -95,7 +96,9 @@ public class HandsAndCuffs : MonoBehaviour
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Right TB_004") || animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Break Right") || animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|TB SS"))
 
             {
-                animator.runtimeAnimatorController = animatorOverrideControllers[idle];
+                
+                animator.runtimeAnimatorController = animatorOverrideControllers[tBRev];
+                if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1) animator.runtimeAnimatorController = animatorOverrideControllers[idle];
 
             }
 
