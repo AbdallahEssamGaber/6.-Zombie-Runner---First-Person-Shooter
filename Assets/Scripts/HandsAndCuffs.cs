@@ -93,7 +93,7 @@ public class HandsAndCuffs : MonoBehaviour
         {
             print("sdfsd");
 
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Right TB_004") || animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Break Right") || animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|TB SS"))
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Right TB_004") || animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Break Right") || animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|TB SS") || animator.GetCurrentAnimatorStateInfo(0).IsName("Right Hand|Hit impact right"))
 
             {
                 
