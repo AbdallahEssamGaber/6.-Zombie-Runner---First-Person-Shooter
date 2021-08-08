@@ -1,7 +1,7 @@
 # [Udemy - Complete C# Unity Developer 3D Learn to Code Making Games][course]
 
 ## 6. Zombie Runner - First Person Shooter  
-[CLOSED NOT FINISHED]
+[CLOSED NOT FINISHED] [Check Notion Page]
 * **First Person Controller**
 * **Raycasting**
 * **Muzzle Flash**
@@ -36,3 +36,4 @@
 
 
 [course]: https://www.udemy.com/course/unitycourse2/
+[Check Notion Page]: https://abdallahgaber.notion.site/6-Zombie-Runner-First-Person-Shooter-d44653dd899c464daa5f00efcbe489aa
